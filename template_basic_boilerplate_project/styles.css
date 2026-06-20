@@ -1,0 +1,39 @@
+/* Boilerplate CSS file */
+
+:root {
+  /* TODO: add website colours (all colours should be variables, no hard coding) */
+}
+
+/*    +-----------------+
+ *    |  NORMILISATION  |
+ *    +-----------------+
+*/
+
+
+/* 
+html {
+  box-sizing: border-box;
+}
+html * {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+*/
+
+
+/*    +----------------+
+ *    |  COLOR SCHEME  |
+ *    +----------------+
+*/
+
+/* INFO: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-color-scheme#examples
+@media only screen and (prefers-color-scheme: ) {  TODO: detect non default scheme and change colours accordingly 
+  :root {
+     TODO: set new colours to be used 
+  }
+}
+*/
+
