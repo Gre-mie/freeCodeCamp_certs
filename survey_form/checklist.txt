@@ -1,0 +1,17 @@
++------------------+
+|  Starting setup  |
++------------------+
+
+new project
+  [] copy template project
+  [] create new branch
+
+index.html: 
+  [] complete the TODOs, or delete what isn't needed
+
+styles.css:
+  [] uncomment relevent sections, delete anything that wont be used 
+
+general:
+  [] clean up file formatting and comments
+  [] put the project through the website checker: https://validator.w3.org/#validate_by_upload+with_options 

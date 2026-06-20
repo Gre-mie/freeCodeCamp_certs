@@ -1,0 +1,52 @@
+/* Boilerplate CSS file */
+
+:root {
+/*  color-scheme: light dark; */
+
+  --REQUIRED-color: red;
+
+
+}
+
+/*    +-----------------+
+ *    |  NORMILISATION  |
+ *    +-----------------+
+*/
+
+html {
+  box-sizing: border-box;
+}
+html * {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+
+/*    +---------------+
+ *    |  MAIN STYLES  |
+ *    +---------------+
+*/
+
+.required::after {
+  content:"*";
+  color: var(--REQUIRED-color);
+  font-size: 1.5rem;
+}
+
+
+
+/*    +----------------+
+ *    |  COLOR SCHEME  |
+ *    +----------------+
+*/
+
+/*
+@media only screen and (prefers-color-scheme: dark) { 
+  :root {
+     TODO: set new colours to be used 
+  }
+}
+*/
