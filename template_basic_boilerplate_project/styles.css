@@ -11,7 +11,7 @@
 */
 
 
-/* 
+ 
 html {
   box-sizing: border-box;
 }
@@ -21,7 +21,22 @@ html * {
 
 body {
   margin: 0;
+  max-width: 210mm;   /* INFO: Width of an A4 page */
+  min-height: 100vh;
+  max-height: 297mm;  /* INFO: Height of an A4 page */
 }
+
+
+
+/*    +---------------+
+ *    |  MAIN STYLES  |
+ *    +---------------+
+*/
+
+
+/*    +----------------+
+ *    |  SCREEN SIZES  |
+ *    +----------------+
 */
 
 

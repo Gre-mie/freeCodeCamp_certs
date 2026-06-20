@@ -1,27 +1,46 @@
-/* Boilerplate CSS file */
+/* INFO: Default styles are for:
+ * light mode
+ * mobile-first 
+ * veritcal layout 
+*/
 
 :root {
 /*  color-scheme: light dark; */
 
+  /* TODO: These are temp colours, change them to a set pallet */
+  --backup-bg: #666699;
+  --body-bg: white;
+
+  --fieldset-border: skyblue;
+
+ /* INFO: Backgrounds should be a desaturated colour */
+  --decoration-border-color1: #d0d0e1;
+  --decoration-border-color2: #d0d0e1;
+
   --REQUIRED-color: red;
 
+  }
 
-}
-
-/*    +-----------------+
+  /*    +-----------------+
  *    |  NORMILISATION  |
  *    +-----------------+
 */
 
 html {
   box-sizing: border-box;
+  background: var(--backup-bg);
 }
 html * {
   box-sizing: inherit;
 }
 
 body {
-  margin: 0;
+  margin: 0 auto;
+  padding: 1em;
+  max-width: 210mm;   /* INFO: Width of an A4 page */
+  min-height: 100vh;
+  max-height: 297mm;  /* INFO: Height of an A4 page */
+  background: var(--body-bg);
 }
 
 
@@ -30,12 +49,97 @@ body {
  *    +---------------+
 */
 
+fieldset, fieldset legend {
+
+  border: 2px solid var(--fieldset-border);
+}
+fieldset legend {
+  padding: 0.3em 1.3em;
+}
+label {
+  display: block;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.input-text, input {
+  font-size: 1.1rem;
+}
+
+
 .required::after {
   content:"*";
   color: var(--REQUIRED-color);
   font-size: 1.5rem;
 }
 
+
+/*    +-----------------------+
+ *    |  DECROITIVE ELEMENTS  |
+ *    +-----------------------+
+*/
+
+body > :not(.background-style) {
+  position: relative;
+  z-index: 1;
+}
+
+.background-style {
+  position: fixed;
+  z-index: 0;
+  border: 3px dashed var(--decoration-border-color1);
+  border-radius: 50%;
+}
+.background-style.one {
+  width: 100vw;
+  height: 100vw;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+.background-style.two {
+  width: 50vh;
+  height: 50vh;
+  bottom: 0;
+  right: 0;
+  border-color: var(--decoration-border-color2);
+  transform: translate(50%, 50%);
+}
+
+/* TODO: Syle radio buttons with happy and sad emojies 
+
+.form-happy-radio {}
+.form-sad-radio {}
+*/
+
+
+/*    +----------------+
+ *    |  SCREEN SIZES  |
+ *    +----------------+
+*/
+
+/* TODO: on styles to be altered on larger screen
+
+
+
+
+
+*/
+
+/* INFO: Horizontal styles */
+@media only screen and (orientation: landscape) {
+  .background-style.one {
+    width: 50vw;
+    height: 50vw;
+  }
+  .background-style.two {
+    width: 100vh;
+    height: 100vh;
+  }
+}
 
 
 /*    +----------------+
@@ -48,5 +152,7 @@ body {
   :root {
      TODO: set new colours to be used 
   }
+
+
 }
 */

@@ -29,22 +29,79 @@
     <h1>How Amazing Am I?<span>Survey form</span></h1>
     <p>This survey collects oppinions on how amazing I am.</p>
 
-    <form>
+    <form method="POST" action="https://example.com">
       <fieldset>
         <legend aria-describedby="your-info">Your information</legend>
         <p id="your-info">This information is used to send the results of the survey once the survey period ends.</p>
 
-        <label for="form-name" class="required">Your Name:
+        <label for="form-name" class="required" class="input-text">
+          Your Name:
           <input id="form-name" 
+            name="name"
             type="text"
+            min-length="3"
+            max-length="40"
+            size="20"
             required>
         </label>
 
+        <label for="form-email" class="required" class="input-text">
+          Your E-mail:
+          <input id="form-email"
+            name="email"
+            type="email"
+            min-length="5"
+            max-length="40"
+            size="20"
+            required>
+        </label>
 
+        <p>Would you like to be contacted about future surveys?</p>
+          <div class="container">
+            <label for="form-happy-radio" class="input-text">
+              Yes
+              <input id="form-happy-radio" 
+                name="contact-about-future-surveys" 
+                type="radio" 
+                value="yes" 
+                checked>
+            </label>
+
+            <label for="form-sad-radio" class="input-text">
+              No
+              <input id="form-sad-radio" 
+                name="contact-about-future-surveys" 
+                type="radio" 
+                value="no">
+            </label>
+          </div>
       </fieldset>
+
+      <p>How old do you think I am?<span>(Optional)</span></p>
+      <label id="form-age" class="input-text">
+          <input id="form-age"
+          aria-describedby="form-age-measure"
+          name="age-guess"
+          type="number"
+          min="0"
+          max="150">
+          <span id="form-age-measure">years old</span>
+
+      </label>
+
+     
+
       
 
 
     </form>
+
+
+    <div class="background-style one" aria-hidden="true"></div>
+    <div class="background-style two" aria-hidden="true"></div>
+
+
   </body>
+
+  
 </html>
