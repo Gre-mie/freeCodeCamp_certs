@@ -29,7 +29,7 @@ body {
  *    +----------------+
 */
 
-/* INFO: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-color-scheme#examples
+/* INFO: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/color-scheme
 @media only screen and (prefers-color-scheme: ) {  TODO: detect non default scheme and change colours accordingly 
   :root {
      TODO: set new colours to be used 
