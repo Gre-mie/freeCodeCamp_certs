@@ -12,7 +12,7 @@
   --body-bg-color: white;
 
   --fieldset-border-color: skyblue;
- /* INFO: Backgrounds should be a desaturated colour */
+  /* INFO: Backgrounds should be a desaturated colour */
   --decoration-border-color1: #d0d0e1;
   --decoration-border-color2: #d0d0e1;
 
@@ -21,7 +21,9 @@
 
   --REQUIRED-text-color: red;
 
-  }
+
+
+}
 
   /*    +-----------------+
  *    |  NORMILISATION  |
@@ -36,14 +38,18 @@ html * {
   box-sizing: inherit;
 }
 
-body {
+body { 
+  font-family: sans-serif;
   color: var(--primary-text-color);
   margin: 0 auto;
   padding: 1em;
   max-width: 210mm;   /* INFO: Width of an A4 page */
   min-height: 100vh;
-  max-height: 297mm;  /* INFO: Height of an A4 page */
   background: var(--body-bg-color);
+}
+
+button {
+  font-size: inherit;
 }
 
 
@@ -52,16 +58,72 @@ body {
  *    +---------------+
 */
 
-fieldset, fieldset legend {
+body, form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5em;
+}
+body {
+  padding: 1.5em 1em;
+}
 
+h1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+
+}
+h1 > span:last-of-type {
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+.main-title {
+  font-family: "Comic Relief";
+  font-weight: 700;
+}
+
+h1 + p {
+  margin: 0;
+  text-align: center;
+}
+
+fieldset {
+ /* margin-bottom: 1em;*/
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+}
+fieldset, fieldset > legend {
   border: 2px solid var(--fieldset-border-color);
 }
-fieldset legend {
-  padding: 0.3em 1.3em;
+fieldset > legend {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  width: 100%;
+  padding: 0.2em 0.5em;
+  border-radius: 0.3em;
 }
+fieldset > legend > div {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 0.7rem;
+}
+.field-title {
+  display: inline-block;
+  font-family: "Comic Relief";
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
 label {
   display: block;
 }
+
+
 
 .container {
   display: flex;
@@ -72,7 +134,7 @@ label {
 }
 
 .input-text, input {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
 }
 
 #form-relationship {
@@ -81,9 +143,12 @@ label {
 
 
 .required::after {
-  content:"*";
+  content: " *";
   color: var(--REQUIRED-text-color);
   font-size: 1.5rem;
+}
+.optional::after {
+  content: " (Optional)"
 }
 
 
@@ -133,6 +198,7 @@ body > :not(.background-style) {
 
 /* TODO: on styles to be altered on larger screen
 
+/* input[size] may need changing for brreak points and horizontal  */
 
 
 
@@ -140,7 +206,15 @@ body > :not(.background-style) {
 */
 
 /* INFO: Horizontal styles */
+
+/* TODO: find out why this style isn't being applied when in landscape */
 @media only screen and (orientation: landscape) {
+  body {
+    padding: 1em 2em;
+  }
+  fieldset > legend {
+    padding: 0.2em 1.3em;
+  }
   .background-style.one {
     width: 50vw;
     height: 50vw;

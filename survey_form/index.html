@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
     <meta name="description" content="A survey form to collect data about how amazing people think I am.">
     <meta name="keywords" content="survey form, have your say, I'm amazing, I'm Great, opinions,">
 
@@ -22,16 +21,26 @@
     <meta name="application-name" content="How Amazing Am I - survey form" lang="en">
     <title>How Amazing Am I - survey form</title>
 
+    <!-- INFO: Font: "Comic Relief" from google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
+
+
   </head>
 
   <body>
 
-    <h1>How Amazing Am I?<span>Survey form</span></h1>
+    <h1><span class="main-title">How Amazing Am I?</span><span>Survey form</span></h1>
     <p>This survey collects oppinions on how amazing I am.</p>
 
     <form method="POST" action="https://example.com">
       <fieldset>
-        <legend aria-describedby="your-info">Your information</legend>
+        <legend aria-describedby="your-info">
+          <span class="field-title">Your information</span>
+          <div>Part 1 of 3</div>
+        </legend>
+
         <p id="your-info">This information is used to send the results of the survey once the survey period ends.</p>
 
         <label for="form-name" class="required" class="input-text">
@@ -77,7 +86,26 @@
             </label>
           </div>
         </div>
+      </fieldset>
 
+
+      <fieldset>
+        <legend aria-describedby="our-recognition">
+          <span class="field-title">Who you are to me</span>
+          <div>Part 2 of 3</div>
+        </legend>
+
+        <p id="our-recognition">This section is about how we know eachother.</p>
+
+        <label for="form-nick-name">
+          Your Nickname:<span class="optional"></span>
+          <input id="form-nick-name"
+          type="text"
+          min-length=""
+          max-length=""
+          size="20">
+        </label>
+        
         <label for="form-relationship">
           What is your relationship with me?
           <select id="form-relationship" 
@@ -89,31 +117,40 @@
             <option value="none">None</option>
             <option value="aquaintance">Aquaintance</option>
             <option value="colleague">Colleague</option>
+            <option value="class-mate">Class mate</option>
             <option value="firend">Friend</option>
-            <option value="best friend">Best friend</option>
-            <option value="business partner">Business partner</option>
-            <option value="romantic partner">Romantic partner</option>
+            <option value="best-friend">Best friend</option>
+            <option value="business-partner">Business partner</option>
+            <option value="romantic-partner">Romantic partner</option>
             <option value="child">My child</option>
             <option value="parent">Parent</option>
-            <option value="other family member">Other family member</option>
+            <option value="other-family-member">Other family member</option>
             <option value="other">Other</option>
           </select>
         </label>
-        
+      </fieldset> 
 
+
+      <fieldset>
+        <legend aria-describedby="form-opinion">
+          <span class="field-title">Your Opinion</span>
+          <div><span>Part 3 of 3</span></div>
+        </legend>
+
+        <p id="form-opinion">This section is about your opinion on me.</p>
+
+        <p class="optional">How old do you think I am?</p>
+        <label id="form-age" class="input-text">
+            <input id="form-age"
+            aria-describedby="form-age-measure"
+            name="age-guess"
+            type="number"
+            min="0"
+            max="150">
+            <span id="form-age-measure">years old</span>:website
+        </label>
       </fieldset>
-
-      <p>How old do you think I am?<span>(Optional)</span></p>
-      <label id="form-age" class="input-text">
-          <input id="form-age"
-          aria-describedby="form-age-measure"
-          name="age-guess"
-          type="number"
-          min="0"
-          max="150">
-          <span id="form-age-measure">years old</span>
-
-      </label>
+      <button type="submit">Send Survey</button>
 
 
 
