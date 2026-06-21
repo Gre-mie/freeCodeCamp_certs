@@ -8,8 +8,11 @@
 /*  color-scheme: light dark; */
 
   /* TODO: These are temp colours, change them to a set pallet */
-  --backup-bg-color: #666699;
-  --body-bg-color: white;
+  --backup-bg-color: #996699;
+  --body-bg-color: #ffffff99;/*white;*/
+  --fieldset-bg-color: #ffffffaa;
+  /* TODO: Color pick this colour from the design once the colours are chosen */
+  --fieldset-legend-bg-color: #ffffffaa; 
 
   --fieldset-border-color: skyblue;
   /* INFO: Backgrounds should be a desaturated colour */
@@ -90,11 +93,12 @@ h1 + p {
 }
 
 fieldset {
- /* margin-bottom: 1em;*/
-  padding: 0.5em 1em;
+  width: 100%;
+  padding: 0.5em 1em; 
   border-radius: 0.5em;
 }
 fieldset, fieldset > legend {
+  background: var(--fieldset-bg-color);
   border: 2px solid var(--fieldset-border-color);
 }
 fieldset > legend {
@@ -203,11 +207,10 @@ body > :not(.background-style) {
 
 
 
-*/
+
 
 /* INFO: Horizontal styles */
 
-/* TODO: find out why this style isn't being applied when in landscape */
 @media only screen and (orientation: landscape) {
   body {
     padding: 1em 2em;
