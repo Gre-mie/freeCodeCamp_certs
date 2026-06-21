@@ -2,6 +2,10 @@
 |  Starting setup  |
 +------------------+
 
+new project
+  [] copy template project
+  [] create new branch
+
 index.html: 
   [] complete the TODOs, or delete what isn't needed
 
@@ -10,5 +14,5 @@ styles.css:
 
 general:
   [] clean up file formatting and comments
-  [] put the project through the website checker: https://validator.w3.org/#validate_by_upload+with_options 
-  [] create new branch
+  [] put the project through the website checker: https://validator.w3.org/#validate_by_upload+with_options
+  [] spell check the websites text

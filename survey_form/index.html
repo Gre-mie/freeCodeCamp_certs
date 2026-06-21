@@ -55,8 +55,9 @@
             size="20"
             required>
         </label>
-
-        <p>Would you like to be contacted about future surveys?</p>
+        
+        <div class="container-inlineblock">
+          <p>Would you like to be contacted about future surveys?</p>
           <div class="container">
             <label for="form-happy-radio" class="input-text">
               Yes
@@ -75,6 +76,31 @@
                 value="no">
             </label>
           </div>
+        </div>
+
+        <label for="form-relationship">
+          What is your relationship with me?
+          <select id="form-relationship" 
+            class="input-text" 
+            name="relationship">
+            <option class="placeholder-text"
+              value=""
+              disabled>-- Relationship type --</option>
+            <option value="none">None</option>
+            <option value="aquaintance">Aquaintance</option>
+            <option value="colleague">Colleague</option>
+            <option value="firend">Friend</option>
+            <option value="best friend">Best friend</option>
+            <option value="business partner">Business partner</option>
+            <option value="romantic partner">Romantic partner</option>
+            <option value="child">My child</option>
+            <option value="parent">Parent</option>
+            <option value="other family member">Other family member</option>
+            <option value="other">Other</option>
+          </select>
+        </label>
+        
+
       </fieldset>
 
       <p>How old do you think I am?<span>(Optional)</span></p>
@@ -88,6 +114,8 @@
           <span id="form-age-measure">years old</span>
 
       </label>
+
+
 
      
 

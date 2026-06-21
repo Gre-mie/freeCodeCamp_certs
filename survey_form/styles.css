@@ -8,16 +8,18 @@
 /*  color-scheme: light dark; */
 
   /* TODO: These are temp colours, change them to a set pallet */
-  --backup-bg: #666699;
-  --body-bg: white;
+  --backup-bg-color: #666699;
+  --body-bg-color: white;
 
-  --fieldset-border: skyblue;
-
+  --fieldset-border-color: skyblue;
  /* INFO: Backgrounds should be a desaturated colour */
   --decoration-border-color1: #d0d0e1;
   --decoration-border-color2: #d0d0e1;
 
-  --REQUIRED-color: red;
+  --primary-text-color: black;
+  --placeholder-text-color: grey;
+
+  --REQUIRED-text-color: red;
 
   }
 
@@ -28,19 +30,20 @@
 
 html {
   box-sizing: border-box;
-  background: var(--backup-bg);
+  background: var(--backup-bg-color);
 }
 html * {
   box-sizing: inherit;
 }
 
 body {
+  color: var(--primary-text-color);
   margin: 0 auto;
   padding: 1em;
   max-width: 210mm;   /* INFO: Width of an A4 page */
   min-height: 100vh;
   max-height: 297mm;  /* INFO: Height of an A4 page */
-  background: var(--body-bg);
+  background: var(--body-bg-color);
 }
 
 
@@ -51,7 +54,7 @@ body {
 
 fieldset, fieldset legend {
 
-  border: 2px solid var(--fieldset-border);
+  border: 2px solid var(--fieldset-border-color);
 }
 fieldset legend {
   padding: 0.3em 1.3em;
@@ -64,15 +67,22 @@ label {
   display: flex;
   justify-content: space-evenly;
 }
+.container-inlineblock {
+  display: inline-block;
+}
 
 .input-text, input {
   font-size: 1.1rem;
 }
 
+#form-relationship {
+  color: var(--placeholder-text-color);
+}
+
 
 .required::after {
   content:"*";
-  color: var(--REQUIRED-color);
+  color: var(--REQUIRED-text-color);
   font-size: 1.5rem;
 }
 
