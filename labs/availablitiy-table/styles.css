@@ -8,7 +8,8 @@
 
   --emoji-bg-color: #ffffff;
   --emoji-shadow-color: #ffffffdd;
-  --cell-shadow-color: #29293daa;
+
+  --shadow-color: #29293daa;
 
   --cell-width: 4rem;
   --cell-height: 4rem;
@@ -16,13 +17,20 @@
   --main-text-color: #00091a;
   --table-bg-color: #e6e6ff;
   --table-border-color: #b3b3ff;
+  --table-border-color2: #990099;
   --table-shadow-color: #29293dee;
+
+  --solid-border: 2px solid var(--table-border-color2);
+  --dashed-border: 2px dashed var(--table-border-color2);
+
 }
 
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 2em;
   min-width: min-content;
   min-height: min-content;
   width: 100vw;
@@ -34,12 +42,20 @@ body {
   color: var(--main-text-color, black);
 }
 table {
+  padding: 1em;
   min-width: min-content;
   min-height: min-content;
+  border-collapse: collapse; 
   background: var(--table-bg-color);
   border: 3px solid var(--table-border-color);
   border-radius: 0.2em;
   box-shadow: 0 0 10px var(--table-shadow-color);
+}
+.half td {
+  border-bottom: var(--dashed-border);
+}
+.sharp td {
+  border-bottom: var(--solid-border);
 }
 
 .time {
@@ -60,7 +76,6 @@ table {
   border: none;
 }
 
-
 tr:has(td) > th {
   padding: 0.2em;
   height: var(--cell-height);
@@ -71,8 +86,29 @@ td {
   min-height: var(--cell-height);
   width: var(--cell-width);
   height: var(--cell-height);
-  box-shadow: 0 0 5px var(--cell-shadow-color);
+}
+
+#legend {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  width: 10%;
+}
+#legend-gradient {
+  width: 12em;
+  height: 2em;
+  background: linear-gradient(
+    90deg,
+    var(--color0) 0% 16%,
+    var(--color1) 16% 32%,
+    var(--color2) 32% 48%,
+    var(--color3) 48% 64%,
+    var(--color4) 64% 80%,
+    var(--color5) 80% 100%);
+  border: 1px solid var(--shadow-color);
   border-radius: 1em;
+  box-shadow: 0 0 5px var(--shadow-color);
 }
 
 /* attendence cell positions */
@@ -137,3 +173,4 @@ td > span:nth-of-type(5) {
 .available-5 {
   background: var(--color5);
 }
+
