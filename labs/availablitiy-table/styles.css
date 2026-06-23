@@ -8,7 +8,12 @@
 
   --emoji-bg-color: #ffffff;
   --emoji-shadow-color: #ffffffdd;
+<<<<<<< HEAD
   --cell-shadow-color: #29293daa;
+=======
+
+  --shadow-color: #29293daa;
+>>>>>>> main_lab
 
   --cell-width: 4rem;
   --cell-height: 4rem;
@@ -16,13 +21,29 @@
   --main-text-color: #00091a;
   --table-bg-color: #e6e6ff;
   --table-border-color: #b3b3ff;
+<<<<<<< HEAD
   --table-shadow-color: #29293dee;
+=======
+  --table-border-color2: #990099;
+  --table-shadow-color: #29293dee;
+
+  --solid-border: 2px solid var(--table-border-color2);
+  --dashed-border: 2px dashed var(--table-border-color2);
+
+>>>>>>> main_lab
 }
 
 body {
   display: flex;
+<<<<<<< HEAD
   justify-content: center;
   align-items: center;
+=======
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+>>>>>>> main_lab
   min-width: min-content;
   min-height: min-content;
   width: 100vw;
@@ -34,13 +55,29 @@ body {
   color: var(--main-text-color, black);
 }
 table {
+<<<<<<< HEAD
   min-width: min-content;
   min-height: min-content;
+=======
+  padding: 1em;
+  min-width: min-content;
+  min-height: min-content;
+  border-collapse: collapse; 
+>>>>>>> main_lab
   background: var(--table-bg-color);
   border: 3px solid var(--table-border-color);
   border-radius: 0.2em;
   box-shadow: 0 0 10px var(--table-shadow-color);
 }
+<<<<<<< HEAD
+=======
+.half td {
+  border-bottom: var(--dashed-border);
+}
+.sharp td {
+  border-bottom: var(--solid-border);
+}
+>>>>>>> main_lab
 
 .time {
   display: flex;
@@ -60,7 +97,10 @@ table {
   border: none;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> main_lab
 tr:has(td) > th {
   padding: 0.2em;
   height: var(--cell-height);
@@ -71,8 +111,35 @@ td {
   min-height: var(--cell-height);
   width: var(--cell-width);
   height: var(--cell-height);
+<<<<<<< HEAD
   box-shadow: 0 0 5px var(--cell-shadow-color);
   border-radius: 1em;
+=======
+}
+
+.legend {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  width: 10%;
+}
+#legend-gradient {
+  width: 12em;
+  height: 2em;
+  background: linear-gradient(
+    90deg,
+    var(--color0) 2em,
+    var(--color1) 2em 4em,
+    var(--color2) 4em 6em,
+    var(--color3) 6em 8em,
+    var(--color4) 8em 10em,
+    var(--color5) 10em 12em
+  );
+  border: 1px solid var(--shadow-color);
+  border-radius: 1em;
+  box-shadow: 0 0 5px var(--shadow-color);
+>>>>>>> main_lab
 }
 
 /* attendence cell positions */
@@ -137,3 +204,7 @@ td > span:nth-of-type(5) {
 .available-5 {
   background: var(--color5);
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> main_lab
