@@ -1,0 +1,177 @@
+:root {
+  --color0: #ccccff;
+  --color1: #b3b3ff;
+  --color2: #9999ff;
+  --color3: #8080ff;
+  --color4: #6666ff;
+  --color5: #4d4dff;
+
+  --emoji-bg-color: #ffffff;
+  --emoji-shadow-color: #ffffffdd;
+
+  --shadow-color: #29293daa;
+
+  --cell-width: 4rem;
+  --cell-height: 4rem;
+
+  --main-text-color: #00091a;
+  --table-bg-color: #e6e6ff;
+  --table-border-color: #b3b3ff;
+  --table-border-color2: #990099;
+  --table-shadow-color: #29293dee;
+
+  --solid-border: 2px solid var(--table-border-color2);
+  --dashed-border: 2px dashed var(--table-border-color2);
+
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  min-width: min-content;
+  min-height: min-content;
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  padding: 1em;
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  color: var(--main-text-color, black);
+}
+table {
+  padding: 1em;
+  min-width: min-content;
+  min-height: min-content;
+  border-collapse: collapse; 
+  background: var(--table-bg-color);
+  border: 3px solid var(--table-border-color);
+  border-radius: 0.2em;
+  box-shadow: 0 0 10px var(--table-shadow-color);
+}
+.half td {
+  border-bottom: var(--dashed-border);
+}
+.sharp td {
+  border-bottom: var(--solid-border);
+}
+
+.time {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.time span {
+  display: inline-block;
+  font-family: monospace;
+}
+.time hr {
+  margin: 0;
+  width: 30%;
+  height: 2px;
+  background: black;
+  border: none;
+}
+
+tr:has(td) > th {
+  padding: 0.2em;
+  height: var(--cell-height);
+}
+td {
+  position: relative;
+  min-width: var(--cell-width);
+  min-height: var(--cell-height);
+  width: var(--cell-width);
+  height: var(--cell-height);
+}
+
+.legend {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  width: 10%;
+}
+#legend-gradient {
+  width: 12em;
+  height: 2em;
+  background: linear-gradient(
+    90deg,
+    var(--color0) 2em,
+    var(--color1) 2em 4em,
+    var(--color2) 4em 6em,
+    var(--color3) 6em 8em,
+    var(--color4) 8em 10em,
+    var(--color5) 10em 12em
+  );
+  border: 1px solid var(--shadow-color);
+  border-radius: 1em;
+  box-shadow: 0 0 5px var(--shadow-color);
+}
+
+/* attendence cell positions */
+td > span {
+  display: none;
+  position: absolute;
+  box-shadow: 0 0 3px 1px var(--emoji-shadow-color);
+  background: radial-gradient(circle, 
+    transparent,
+    var(--emoji-shadow-color) 90%
+  );
+  border-radius: 50%;
+}
+td > span:nth-of-type(1) {
+  display: inline-block;
+  top: 0.6em;
+  left: 0.6em;
+}
+td > span:nth-of-type(2) {
+  top: 0.6em;
+  right: 0.6em;
+}
+td > span:nth-of-type(3) {
+  bottom: 0.6em;
+  left: 0.6em;
+}
+td > span:nth-of-type(4) {
+  bottom: 0.6em;
+  right: 0.6em;
+}
+td > span:nth-of-type(5) {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.available-1 > span:nth-of-type(-n + 1),
+.available-2 > span:nth-of-type(-n + 2),
+.available-3 > span:nth-of-type(-n + 3),
+.available-4 > span:nth-of-type(-n + 4),
+.available-5 > span:nth-of-type(-n + 5) {
+  display: inline-block;
+}
+
+
+/* attendence cell colors */
+.available-0 {
+  background: var(--color0);
+}
+.available-1 {
+  background: var(--color1);
+}
+.available-2 {
+  background: var(--color2);
+}
+.available-3 {
+  background: var(--color3);
+}
+.available-4 {
+  background: var(--color4);
+}
+.available-5 {
+  background: var(--color5);
+}
+
