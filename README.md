@@ -1,5 +1,6 @@
 # Labs:
 ## availability app
-[availability app screenshot](./project-screenshots/lab-availability-table.png)
+<img width="878" height="658" alt="lab-availability-table" src="https://github.com/user-attachments/assets/d3010c7b-a82c-49eb-be1e-d709dc6fd71b" />
+
 
 # Certifications:
