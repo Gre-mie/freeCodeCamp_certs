@@ -6,7 +6,9 @@
 
 ## Moon orbit
 
-[moon orbit project](file:///home/sen/Working/courses/freeCodeCamp/freeCodeCamp_certs/project-screenshots/pngs/moon-orbit.png)
+<img width="200px" height="auto" 
+  alt="lab, moon orbit project" 
+  src="https://github.com/Gre-mie/freeCodeCamp_certs/blob/main/project-screenshots/pngs/moon-orbit.png?raw=true" />
 
 
 # Certifications:
