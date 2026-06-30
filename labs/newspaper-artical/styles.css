@@ -1,0 +1,79 @@
+
+:root {
+  /* named colours recognised by most bowsers used as backup colours */
+  
+  --text-color: #35312e; /* black */
+
+  --paper-color: #bca98f; /* beige */
+
+  
+}
+
+* {
+  box-sizing: border-box;
+
+  border: 1px solid red;
+}
+
+html {
+  font-size: 24px;
+}
+body {
+  margin: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+ruby {
+  ruby-position: under;
+}
+
+
+/*
+     NOTE: Alignment
+*/
+
+/*
+     NOTE: Elements
+*/
+
+.table {
+
+}
+
+.newspaper {
+  display: inline-block;
+
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+
+  background-color: var(--paper-color, tan);
+
+}
+.name { /* publisher and logo */
+}
+.headline {
+
+}
+.author {
+  
+}
+.date {
+
+}
+.main-artical-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em; 
+
+  & span {
+    font-size: 5rem;
+  }
+}
+.text {
+
+}
+
+
+
+
