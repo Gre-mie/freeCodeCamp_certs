@@ -11,21 +11,47 @@
 
 * {
   box-sizing: border-box;
-
-  border: 1px solid red;
 }
 
 html {
   font-size: 24px;
+  color: var(--text-color, black);
 }
 body {
   margin: 0;
   min-width: 100vw;
   min-height: 100vh;
 }
+
+hr {
+  margin: 1rem 0.5rem;
+  height: 0.2rem;
+  background: var(--text-color, black);
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+ul li {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1em;
+}
+ul li p {
+  display: inline-block;
+}
 ruby {
   ruby-position: under;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.5em;
 }
+ruby rt {
+  margin-top: 0.5em;
+}
+
 
 
 /*
@@ -33,7 +59,7 @@ ruby {
 */
 
 /*
-     NOTE: Elements
+     NOTE:Elements
 */
 
 .table {
@@ -41,6 +67,7 @@ ruby {
 }
 
 .newspaper {
+  padding: 1rem 0.5rem;
   display: inline-block;
 
   font-size: 16px;
@@ -49,17 +76,31 @@ ruby {
   background-color: var(--paper-color, tan);
 
 }
+
 .name { /* publisher and logo */
+  font-size: 2rem;
+  font-family: "Times New Roman", serif;
+}
+.name, .author {
+  text-transform: uppercase;
 }
 .headline {
-
+  font-size: 2em;
+  font-weight: bold;
 }
+.sub-headline {
+  font-weight: 100;
+  font-size: 1.5em;
+  font-style: italic;
+}
+
 .author {
-  
+  font-weight: bold;
 }
 .date {
 
 }
+
 .main-artical-image {
   display: flex;
   justify-content: center;
@@ -70,8 +111,14 @@ ruby {
     font-size: 5rem;
   }
 }
-.text {
 
+.text {
+  line-height: 2em;
+  text-indent: 20px;
+}
+.text::first-letter {
+  font-weight: bold;
+  font-size: 2em;
 }
 
 
