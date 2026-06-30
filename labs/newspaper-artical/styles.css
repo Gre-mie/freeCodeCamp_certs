@@ -1,12 +1,16 @@
 
 :root {
   /* named colours recognised by most bowsers used as backup colours */
-  
+
   --text-color: #35312e; /* black */
+
+  --border-width: 0.2rem; /* 0.2rem */
+  --border-color: #7f715f; /* gray */
+
+  --distance-background: #191919; /* black */
 
   --paper-color: #bca98f; /* beige */
 
-  
 }
 
 * {
@@ -16,17 +20,20 @@
 html {
   font-size: 24px;
   color: var(--text-color, black);
+  background: var(--distance-background, black);
 }
 body {
   margin: 0;
-  min-width: 100vw;
-  min-height: 100vh;
 }
 
 hr {
   margin: 1rem 0.5rem;
-  height: 0.2rem;
-  background: var(--text-color, black);
+  height: var(--border-width, 0.2rem);
+  background: var(--border-color, gray); /* TODO: */
+  border: none;
+}
+hr:first-of-type {
+  margin-bottom: 0;
 }
 
 ul {
@@ -52,34 +59,47 @@ ruby rt {
   margin-top: 0.5em;
 }
 
-
-
 /*
-     NOTE: Alignment
+     NOTE: Plant
 */
 
-/*
-     NOTE:Elements
-*/
-
-.table {
-
+.plant {
+  width: 100px;
+  height: 100px;
+  background: blue;
 }
 
+
+
+/*
+    NOTE: Newspaper
+*/
 .newspaper {
   padding: 1rem 0.5rem;
   display: inline-block;
 
+  min-width: 420px;
+  max-width: 1000px;
+  
   font-size: 16px;
   font-family: "Open Sans", sans-serif;
 
   background-color: var(--paper-color, tan);
-
+}
+.newspaper > :not(p, hr) {
+  margin: 0;
 }
 
 .name { /* publisher and logo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min-content;
   font-size: 2rem;
   font-family: "Times New Roman", serif;
+}
+.publisher {
+  text-wrap: nowrap;
 }
 .name, .author {
   text-transform: uppercase;
@@ -88,24 +108,27 @@ ruby rt {
   font-size: 2em;
   font-weight: bold;
 }
-.sub-headline {
+.newspaper > .sub-headline {
+  margin-bottom: 0.5em;
   font-weight: 100;
   font-size: 1.5em;
   font-style: italic;
 }
 
-.author {
+.newspaper .author {
+  margin-bottom: 0.5rem;
   font-weight: bold;
 }
 .date {
-
+  margin: 0;
+  display: flex;
+  justify-content: right;
 }
 
 .main-artical-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: min-content;
   padding: 0.5em; 
+  border: var(--border-border, 0.2rem) solid var(--border-color, gray); /* TODO: */
 
   & span {
     font-size: 5rem;
@@ -119,6 +142,48 @@ ruby rt {
 .text::first-letter {
   font-weight: bold;
   font-size: 2em;
+}
+
+/*
+    NOTE: Media queries
+*/
+
+/* INFO: Mobile */
+@media only screen and 
+  (width <= 640px) {
+
+  .table > :not(.newspaper){
+    display: none;
+  }
+  .newspaper {
+    display: flex;
+    flex-direction: column;
+  }
+  .name {
+    align-self: center;
+  }
+}
+
+/* INFO: Desktop */
+@media only screen and 
+  (width > 640px) {
+
+  * {
+    border: 1px solid yellow; /**/
+  }
+
+
+}
+
+/* INFO: These should build ontop of DESKTOP sizes */
+@media only screen and 
+  (min-width: 1024px) {
+
+  * {
+    border: 1px solid green; /**/
+
+  }
+
 }
 
 
