@@ -1,20 +1,29 @@
 
 :root {
   /* named colours recognised by most bowsers used as backup colours */
-
-  --text-color: #35312e; /* black */
-
-  --border-width: 0.2rem; /* 0.2rem */
-  --border-color: #7f715f; /* gray */
+  
+  --pixle-width: 0.2rem; /* 0.2rem */
 
   --distance-background: #191919; /* black */
 
+
+  /* INFO: Newspaper variables */
   --paper-color: #bca98f; /* beige */
+
+  --whitespace-small: 0.5rem; /* 0.5rem */
+  --whitespace-medium: 1rem; /* 1rem */
+  --whitespace-large: 1.5rem; /* 1.5rem */
+  --whitespace-huge: 2rem; /* 2rem */
+
+  --text-color: #35312e; /* black */
+  --border-color: #7f715f; /* gray */
+
 
 }
 
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 html {
@@ -22,14 +31,11 @@ html {
   color: var(--text-color, black);
   background: var(--distance-background, black);
 }
-body {
-  margin: 0;
-}
 
 hr {
-  margin: 1rem 0.5rem;
-  height: var(--border-width, 0.2rem);
-  background: var(--border-color, gray); /* TODO: */
+  margin: var(--whitespace-medium, 1rem) var(--whitespace-small, 0.5rem);
+  height: var(--pixel-width, 0.2rem);
+  background: var(--border-color, gray);
   border: none;
 }
 hr:first-of-type {
@@ -37,14 +43,25 @@ hr:first-of-type {
 }
 
 ul {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--whitespace-small, 0.5rem) / 2);
   padding: 0;
   list-style: none;
+
+  border: calc(var(--pixel-width, 0.2rem) / 2) solid var(--border-color, gray);
 }
 ul li {
+  padding: var(--whitespace-small, 0.5rem);
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   flex-wrap: nowrap;
-  gap: 1em;
+  gap: var(--whitespace-medium, 1rem);
+ 
+  border-bottom: 1px dashed var(--border-color, gray);
+}
+ul li:last-of-type {
+  border: none;
 }
 ul li p {
   display: inline-block;
@@ -75,22 +92,16 @@ ruby rt {
     NOTE: Newspaper
 */
 .newspaper {
-  padding: 1rem 0.5rem;
-  display: inline-block;
-
-  min-width: 420px;
-  max-width: 1000px;
-  
+  padding: var(--whitespace-medium, 1rem);
+  min-width: min-content; 
+  max-width: 1000px; 
   font-size: 16px;
   font-family: "Open Sans", sans-serif;
-
   background-color: var(--paper-color, tan);
-}
-.newspaper > :not(p, hr) {
-  margin: 0;
 }
 
 .name { /* publisher and logo */
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -109,14 +120,14 @@ ruby rt {
   font-weight: bold;
 }
 .newspaper > .sub-headline {
-  margin-bottom: 0.5em;
+  margin-bottom: var(--whitespace-small, 0.5em);
   font-weight: 100;
   font-size: 1.5em;
   font-style: italic;
 }
 
 .newspaper .author {
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--whitespace-small,0.5rem);
   font-weight: bold;
 }
 .date {
@@ -126,18 +137,18 @@ ruby rt {
 }
 
 .main-artical-image {
+  margin-top: var(--whitespace-medium, 1rem);
+  margin-right: var(--whitespace-medium, 1rem);
   width: min-content;
-  padding: 0.5em; 
-  border: var(--border-border, 0.2rem) solid var(--border-color, gray); /* TODO: */
-
-  & span {
-    font-size: 5rem;
-  }
+  padding: var(--whitespace-small, 0.5rem); 
+  border: var(--border-border, 0.2rem) solid var(--border-color, gray);
+  font-size: 5rem; 
 }
 
 .text {
   line-height: 2em;
   text-indent: 20px;
+  margin-top: var(--whitespace-small, 0.5rem);
 }
 .text::first-letter {
   font-weight: bold;
@@ -151,16 +162,12 @@ ruby rt {
 /* INFO: Mobile */
 @media only screen and 
   (width <= 640px) {
-
   .table > :not(.newspaper){
     display: none;
   }
-  .newspaper {
-    display: flex;
-    flex-direction: column;
-  }
-  .name {
-    align-self: center;
+
+  .main-artical-image {
+    margin: 0px auto;
   }
 }
 
@@ -168,9 +175,16 @@ ruby rt {
 @media only screen and 
   (width > 640px) {
 
-  * {
-    border: 1px solid yellow; /**/
+  .newspaper {
+    padding: var(--whitespace-huge, 2rem) var(--whitespace-large, 1.5rem);
   }
+
+  .main-artical-image {
+    margin-top: var(--whitespace-large, 1.5rem);
+    float: left; 
+  }
+
+
 
 
 }
@@ -179,12 +193,17 @@ ruby rt {
 @media only screen and 
   (min-width: 1024px) {
 
+ 
+
   * {
-    border: 1px solid green; /**/
+  /*  border: 1px solid green; */
 
   }
+  
+
 
 }
+
 
 
 
