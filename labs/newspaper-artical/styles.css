@@ -2,12 +2,18 @@
 :root {
   /* named colours recognised by most bowsers used as backup colours */
   
-  --pixle-width: 0.2rem; /* 0.2rem */
+  --outline-color: #191919; /* black */
 
   --distance-background: #191919; /* black */
 
+  /* INFO: Table variables */
+  --table-gap-color: #432d1f; /* maroon */
+  --table-board-color: #643e23; /* saddlebrown */
+  --table-board-highlight: #764927; /* sienna */
 
   /* INFO: Newspaper variables */
+  --pixle-width: 0.2rem; /* 0.2rem */
+  
   --paper-color: #bca98f; /* beige */
 
   --whitespace-small: 0.5rem; /* 0.5rem */
@@ -27,6 +33,10 @@
 }
 
 html {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 24px;
   color: var(--text-color, black);
   background: var(--distance-background, black);
@@ -77,10 +87,28 @@ ruby rt {
 }
 
 /*
+     NOTE: Table
+*/
+
+/* TODO:
+ *  Max width on table
+ *  Table texture/color
+*/
+.table {
+  min-height: 500px;
+  background-image: repeating-linear-gradient(
+    var(--table-gap-color, maroon) 0% 2%,
+    var(--table-board-color, saddlebrown) 2% 16%,
+    var(--table-board-highlight, sienna) 18% 20%
+  );
+}
+
+/*
      NOTE: Plant
 */
 
 .plant {
+  margin: var(--whitespace-large, 2rem);
   width: 100px;
   height: 100px;
   background: blue;
@@ -94,7 +122,7 @@ ruby rt {
 .newspaper {
   padding: var(--whitespace-medium, 1rem);
   min-width: min-content; 
-  max-width: 1000px; 
+  max-width: 700px; 
   font-size: 16px;
   font-family: "Open Sans", sans-serif;
   background-color: var(--paper-color, tan);
@@ -171,12 +199,22 @@ ruby rt {
   }
 }
 
+
 /* INFO: Desktop */
 @media only screen and 
   (width > 640px) {
 
+  .table {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    gap: var(--whitespace-large, 2rem);
+    height: 100vh;
+  }
+
   .newspaper {
     padding: var(--whitespace-huge, 2rem) var(--whitespace-large, 1.5rem);
+    overflow: scroll;
+    box-shadow: 0 0 var(--pixle-width, 0.2rem) var(--outline-color, black);
   }
 
   .main-artical-image {
@@ -185,23 +223,25 @@ ruby rt {
   }
 
 
-
-
 }
+
 
 /* INFO: These should build ontop of DESKTOP sizes */
 @media only screen and 
   (min-width: 1024px) {
-
- 
-
-  * {
-  /*  border: 1px solid green; */
-
+  .table {
+    max-width: 1024px;
   }
-  
+}
 
-
+@media only screen and (min-height: 400px) and (width > 640px) {
+  .table {
+    max-height: 500px;
+    height: 100vh;
+  }
+  .newspaper {
+    margin-top: 14%;
+  }
 }
 
 
