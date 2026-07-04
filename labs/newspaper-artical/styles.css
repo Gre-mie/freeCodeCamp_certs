@@ -1,8 +1,14 @@
 
 :root {
   /* named colours recognised by most bowsers used as backup colours */
-  
+  --pixle-width: 0.2rem; /* 0.2rem */
+
+  --outline-pixel-size: 0.2rem /* 0.2rem */
+  --outline-half-pixel-size: calc(var(--outline-pixel-size, 0.2rem) / 2); /* 0.1rem */
   --outline-color: #191919; /* black */
+
+  --shadow-color: #35312e; /* black */
+  --large-shadow-size: 2rem; /* 2rem */
 
   --distance-background: #191919; /* black */
 
@@ -12,8 +18,7 @@
   --table-board-highlight: #764927; /* sienna */
 
   /* INFO: Newspaper variables */
-  --pixle-width: 0.2rem; /* 0.2rem */
-  
+
   --paper-color: #bca98f; /* beige */
 
   --whitespace-small: 0.5rem; /* 0.5rem */
@@ -209,12 +214,15 @@ ruby rt {
     grid-template-columns: 1fr 3fr 1fr;
     gap: var(--whitespace-large, 2rem);
     height: 100vh;
+    border-radius: 0.2rem;
   }
 
   .newspaper {
     padding: var(--whitespace-huge, 2rem) var(--whitespace-large, 1.5rem);
     overflow: scroll;
-    box-shadow: 0 0 var(--pixle-width, 0.2rem) var(--outline-color, black);
+    border: var(--outline-half-pixel-size, 0.1rem) solid var(--outline-color, black);
+    box-shadow: 0 0 var(--large-shadow-size, 2rem) var(--outline-color, black);
+    border-radius: 0.2rem;
   }
 
   .main-artical-image {
@@ -234,6 +242,7 @@ ruby rt {
   }
 }
 
+/* INFO: Horizontal sizes but not mobile */
 @media only screen and (min-height: 400px) and (width > 640px) {
   .table {
     max-height: 500px;
