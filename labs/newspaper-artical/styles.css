@@ -93,6 +93,9 @@ ruby rt {
 */
 
 .table {
+  display: flex;
+  justify-content: center;
+  min-width: 1024px;
   min-height: 500px;
   background-image: repeating-linear-gradient(
     var(--table-gap-color, maroon) 0% 2%,
@@ -190,9 +193,6 @@ ruby rt {
   (width > 640px) {
 
   .table {
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
-    gap: var(--whitespace-large, 2rem);
     height: 100vh;
     border-radius: 0.2rem;
   }
@@ -229,7 +229,7 @@ ruby rt {
     height: 100vh;
   }
   .newspaper {
-    margin-top: 14%;
+    margin: 5% 0;
   }
 }
 
