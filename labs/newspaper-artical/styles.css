@@ -1,0 +1,239 @@
+
+:root {
+  /* named colours recognised by most bowsers used as backup colours */
+  --pixle-width: 0.2rem; /* 0.2rem */
+
+  --outline-pixel-size: 0.2rem /* 0.2rem */
+  --outline-half-pixel-size: calc(var(--outline-pixel-size, 0.2rem) / 2); /* 0.1rem */
+  --outline-color: #191919; /* black */
+
+  --shadow-color: #35312e; /* black */
+  --large-shadow-size: 2rem; /* 2rem */
+
+  --distance-background: #191919; /* black */
+
+  /* INFO: Table variables */
+  --table-gap-color: #432d1f; /* maroon */
+  --table-board-color: #643e23; /* saddlebrown */
+  --table-board-highlight: #764927; /* sienna */
+
+  /* INFO: Newspaper variables */
+  --paper-color: #bca98f; /* beige */
+
+  --whitespace-small: 0.5rem; /* 0.5rem */
+  --whitespace-medium: 1rem; /* 1rem */
+  --whitespace-large: 1.5rem; /* 1.5rem */
+  --whitespace-huge: 2rem; /* 2rem */
+
+  --text-color: #35312e; /* black */
+  --border-color: #7f715f; /* gray */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: var(--text-color, black);
+  background: var(--distance-background, black);
+}
+
+hr {
+  margin: var(--whitespace-medium, 1rem) var(--whitespace-small, 0.5rem);
+  height: var(--pixel-width, 0.2rem);
+  background: var(--border-color, gray);
+  border: none;
+}
+hr:first-of-type {
+  margin-bottom: 0;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--whitespace-small, 0.5rem) / 2);
+  padding: 0;
+  list-style: none;
+
+  border: calc(var(--pixel-width, 0.2rem) / 2) solid var(--border-color, gray);
+}
+ul li {
+  padding: var(--whitespace-small, 0.5rem);
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+  gap: var(--whitespace-medium, 1rem);
+ 
+  border-bottom: 1px dashed var(--border-color, gray);
+}
+ul li:last-of-type {
+  border: none;
+}
+ul li p {
+  display: inline-block;
+}
+ruby {
+  ruby-position: under;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.5em;
+}
+ruby rt {
+  margin-top: 0.5em;
+}
+
+/*
+     NOTE: Table
+*/
+
+.table {
+  display: flex;
+  justify-content: center;
+  min-width: 1024px;
+  min-height: 500px;
+  background-image: repeating-linear-gradient(
+    var(--table-gap-color, maroon) 0% 2%,
+    var(--table-board-color, saddlebrown) 2% 16%,
+    var(--table-board-highlight, sienna) 18% 20%
+  );
+}
+
+/*
+    NOTE: Newspaper
+*/
+.newspaper {
+  padding: var(--whitespace-medium, 1rem);
+  min-width: min-content; 
+  max-width: 700px; 
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  background-color: var(--paper-color, tan);
+}
+
+.name { /* publisher and logo */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min-content;
+  font-size: 2rem;
+  font-family: "Times New Roman", serif;
+}
+.publisher {
+  text-wrap: nowrap;
+}
+.author {
+  font-weight: bold;
+}
+.name, .author {
+  text-transform: uppercase;
+}
+.headline {
+  font-weight: 100;
+  font-size: 2em;
+  font-weight: bold;
+}
+.sub-headline {
+  margin-bottom: var(--whitespace-small, 0.5em);
+  font-weight: 100;
+  font-size: 1.5em;
+  font-style: italic;
+}
+
+.newspaper .author {
+  margin-bottom: var(--whitespace-small,0.5rem);
+  font-weight: bold;
+}
+.date {
+  margin: 0;
+  display: flex;
+  justify-content: right;
+}
+
+.main-artical-image {
+  margin-top: var(--whitespace-medium, 1rem);
+  margin-right: var(--whitespace-medium, 1rem);
+  width: min-content;
+  padding: var(--whitespace-small, 0.5rem); 
+  border: var(--border-border, 0.2rem) solid var(--border-color, gray);
+  font-size: 5rem; 
+}
+
+.text {
+  line-height: 2em;
+  text-indent: 20px;
+  margin-top: var(--whitespace-small, 0.5rem);
+}
+.text::first-letter {
+  font-weight: bold;
+  font-size: 2em;
+}
+
+/*
+    NOTE: Media queries
+*/
+
+/* INFO: Mobile */
+@media only screen and 
+  (width <= 640px) {
+  .table > :not(.newspaper){
+    display: none;
+  }
+
+  .main-artical-image {
+    margin: 0px auto;
+  }
+}
+
+
+/* INFO: Desktop */
+@media only screen and 
+  (width > 640px) {
+
+  .table {
+    height: 100vh;
+    border-radius: 0.2rem;
+  }
+
+  .newspaper {
+    padding: var(--whitespace-huge, 2rem) var(--whitespace-large, 1.5rem);
+    overflow: scroll;
+    border: var(--outline-half-pixel-size, 0.1rem) solid var(--outline-color, black);
+    box-shadow: 0 0 var(--large-shadow-size, 2rem) var(--outline-color, black);
+    border-radius: 0.2rem;
+  }
+
+  .main-artical-image {
+    margin-top: var(--whitespace-large, 1.5rem);
+    float: left; 
+  }
+
+
+}
+
+
+/* INFO: These should build ontop of DESKTOP sizes */
+@media only screen and 
+  (min-width: 1024px) {
+  .table {
+    max-width: 1024px;
+  }
+}
+
+/* INFO: Horizontal sizes but not mobile */
+@media only screen and (min-height: 400px) and (width > 640px) {
+  .table {
+    max-height: 500px;
+    height: 100vh;
+  }
+  .newspaper {
+    margin: 5% 0;
+  }
+}
+
