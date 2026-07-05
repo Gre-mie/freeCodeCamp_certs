@@ -128,14 +128,18 @@ ruby rt {
 .publisher {
   text-wrap: nowrap;
 }
+.author {
+  font-weight: bold;
+}
 .name, .author {
   text-transform: uppercase;
 }
 .headline {
+  font-weight: 100;
   font-size: 2em;
   font-weight: bold;
 }
-.newspaper > .sub-headline {
+.sub-headline {
   margin-bottom: var(--whitespace-small, 0.5em);
   font-weight: 100;
   font-size: 1.5em;
@@ -232,8 +236,4 @@ ruby rt {
     margin: 5% 0;
   }
 }
-
-
-
-
 
