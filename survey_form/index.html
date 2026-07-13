@@ -68,7 +68,7 @@
         <div class="container-inlineblock">
           <p>Would you like to be contacted about future surveys?</p>
           <div class="container">
-            <label for="form-happy-radio" class="input-text">
+            <label for="form-happy-radio" class="input-text no-margin">
               Yes
               <input id="form-happy-radio" 
                 name="contact-about-future-surveys" 
@@ -77,7 +77,7 @@
                 checked>
             </label>
 
-            <label for="form-sad-radio" class="input-text">
+            <label for="form-sad-radio" class="input-text no-margin">
               No
               <input id="form-sad-radio" 
                 name="contact-about-future-surveys" 
@@ -147,20 +147,74 @@
             type="number"
             min="0"
             max="150">
-            <span id="form-age-measure">years old</span>:website
+            <span id="form-age-measure">years old</span>
         </label>
-      </fieldset>
-      <button type="submit">Send Survey</button>
 
+        <p>Which words best describe me.</p>
 
-
-     
-
+        <div class="container">
+          <lable for="form-iam-amazing">
+            <input
+              id="form-iam-amazing"
+              type="checkbox"
+              name="amazing"
+              checked
+            >
+            Amazing
+          </lable>
+          <lable for="form-iam-creative">
+            <input
+              id="form-iam-creative"
+              type="checkbox"
+              name="creative"
+            >
+            Creative
+          </lable>
+          <lable for="form-iam-positive">
+            <input
+              id="form-iam-positive"
+              type="checkbox"
+              name="positive"
+            >
+            Positive
+          </lable>
+          <lable for="form-iam-emotional">
+            <input
+              id="form-iam-emotional"
+              type="checkbox"
+              name="emotional"
+            >
+            Emotional
+          </lable>
+          <lable for="form-iam-logical">
+            <input
+              id="form-iam-logical"
+              type="checkbox"
+              name="logical"
+            >
+            Logical
+          </lable>
+        </div>
       
+        <div>        
+          <label 
+            for="form-message-area no-margin"
+            class="max-content"
+          >Leave me a message.</label>
+          <textarea
+            id="form-message-area"
+            name="message-area"
+            cols="40"
+            rows="3"
+            maxlength="50"
+            placeholder="You are the most incredible person I've ever known, have some cake. 🍰"
+          ></textarea>
+        </div>
+      </fieldset>
 
 
+      <button type="submit">Send Survey</button>
     </form>
-
 
     <div class="background-style one" aria-hidden="true"></div>
     <div class="background-style two" aria-hidden="true"></div>

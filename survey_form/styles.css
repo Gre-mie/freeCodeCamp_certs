@@ -24,8 +24,6 @@
 
   --REQUIRED-text-color: red;
 
-
-
 }
 
   /*    +-----------------+
@@ -46,7 +44,7 @@ body {
   color: var(--primary-text-color);
   margin: 0 auto;
   padding: 1em;
-  max-width: 210mm;   /* INFO: Width of an A4 page */
+  max-width: 210mm;   /* IN:whiteFO: Width of an A4 page */
   min-height: 100vh;
   background: var(--body-bg-color);
 }
@@ -94,12 +92,17 @@ h1 + p {
 
 fieldset {
   width: 100%;
-  padding: 0.5em 1em; 
+  padding: 0.5em 1em 1em 1em; 
   border-radius: 0.5em;
 }
-fieldset, fieldset > legend {
+fieldset, fieldset > legend, button[type="submit"] {
   background: var(--fieldset-bg-color);
   border: 2px solid var(--fieldset-border-color);
+}
+button[type="submit"] {
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  font-style: bold;
 }
 fieldset > legend {
   display: flex;
@@ -125,13 +128,29 @@ fieldset > legend > div {
 
 label {
   display: block;
+  margin: 1em 0;
+}
+
+div:has(textarea) {
+  margin: 1em auto 0 auto;
+  width: min-content;
+}
+.max-content {
+  width: max-content;
+}
+textarea {
+  display: block;
+  max-width: 500px;
 }
 
 
-
+.no-margin {
+  margin: 0;
+}
 .container {
   display: flex;
   justify-content: space-evenly;
+  flex-flow: row wrap;
 }
 .container-inlineblock {
   display: inline-block;
@@ -188,12 +207,6 @@ body > :not(.background-style) {
   transform: translate(50%, 50%);
 }
 
-/* TODO: Syle radio buttons with happy and sad emojies 
-
-.form-happy-radio {}
-.form-sad-radio {}
-*/
-
 
 /*    +----------------+
  *    |  SCREEN SIZES  |
@@ -205,7 +218,13 @@ body > :not(.background-style) {
 /* input[size] may need changing for brreak points and horizontal  */
 
 
+@media screen and (max-width: 405px) {
+  /* TODO: screen size below 405px wide should have required input as
+ * inline-block to prevent sudo element position issues */
 
+}
+
+/* TODO: larger screens should have a larger textarea */
 
 
 

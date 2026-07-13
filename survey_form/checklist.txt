@@ -2,9 +2,7 @@
 |  Starting setup  |
 +------------------+
 
-new project
-  [] copy template project
-  [] create new branch
+
 
 index.html: 
   [] complete the TODOs, or delete what isn't needed
