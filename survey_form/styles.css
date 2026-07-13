@@ -1,21 +1,10 @@
-/* INFO: Default styles are for:
- * light mode
- * mobile-first 
- * veritcal layout 
-*/
-
 :root {
-/*  color-scheme: light dark; */
-
-  /* TODO: These are temp colours, change them to a set pallet */
   --backup-bg-color: #996699;
-  --body-bg-color: #ffffff99;/*white;*/
+  --body-bg-color: #ffffff99;
   --fieldset-bg-color: #ffffffaa;
-  /* TODO: Color pick this colour from the design once the colours are chosen */
   --fieldset-legend-bg-color: #ffffffaa; 
 
   --fieldset-border-color: skyblue;
-  /* INFO: Backgrounds should be a desaturated colour */
   --decoration-border-color1: #d0d0e1;
   --decoration-border-color2: #d0d0e1;
 
@@ -23,10 +12,9 @@
   --placeholder-text-color: grey;
 
   --REQUIRED-text-color: red;
-
 }
 
-  /*    +-----------------+
+/*    +-----------------+
  *    |  NORMILISATION  |
  *    +-----------------+
 */
@@ -44,7 +32,7 @@ body {
   color: var(--primary-text-color);
   margin: 0 auto;
   padding: 1em;
-  max-width: 210mm;   /* IN:whiteFO: Width of an A4 page */
+  max-width: 210mm;   /* INFO: Width of an A4 page */
   min-height: 100vh;
   background: var(--body-bg-color);
 }
@@ -113,7 +101,7 @@ fieldset > legend {
   padding: 0.2em 0.5em;
   border-radius: 0.3em;
 }
-fieldset > legend > div {
+fieldset > legend > span {
   display: flex;
   align-items: center;
   font-weight: bold;
@@ -142,7 +130,6 @@ textarea {
   display: block;
   max-width: 500px;
 }
-
 
 .no-margin {
   margin: 0;
@@ -213,19 +200,20 @@ body > :not(.background-style) {
  *    +----------------+
 */
 
-/* TODO: on styles to be altered on larger screen
-
-/* input[size] may need changing for brreak points and horizontal  */
-
-
-@media screen and (max-width: 405px) {
-  /* TODO: screen size below 405px wide should have required input as
- * inline-block to prevent sudo element position issues */
-
+@media screen and (max-width: 410px) {
+  span.block {
+    display: block;
+  }
 }
 
-/* TODO: larger screens should have a larger textarea */
-
+@media screen and (min-width: 340px) {
+  div:has(textarea) {
+    width: 80%;
+  }
+  textarea {
+    width: 100%;
+  }
+}
 
 
 /* INFO: Horizontal styles */
@@ -247,18 +235,3 @@ body > :not(.background-style) {
   }
 }
 
-
-/*    +----------------+
- *    |  COLOR SCHEME  |
- *    +----------------+
-*/
-
-/*
-@media only screen and (prefers-color-scheme: dark) { 
-  :root {
-     TODO: set new colours to be used 
-  }
-
-
-}
-*/

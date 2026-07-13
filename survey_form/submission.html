@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A survey form to collect data about how amazing people think I am.">
+  <link rel="stylesheet" href="./styles.css">
+  <title>How Amazing Am I - survey form</title>
+  <!-- INFO: Font: "Comic Relief" from google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --backup-bg-color: #996699;
+      --body-bg-color: #ffffff99;
+      --fieldset-bg-color: #ffffffaa;
+      --fieldset-legend-bg-color: #ffffffaa;
+
+      --fieldset-border-color: skyblue;
+      --decoration-border-color1: #d0d0e1;
+      --decoration-border-color2: #d0d0e1;
+
+      --primary-text-color: black;
+      --placeholder-text-color: grey;
+
+      --REQUIRED-text-color: red;
+    }
+
+    html {
+      box-sizing: border-box;
+      background: var(--backup-bg-color);
+    }
+
+    html * {
+      box-sizing: inherit;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: var(--primary-text-color);
+      margin: 0 auto;
+      padding: 1em;
+      max-width: 210mm;
+      /* INFO: Width of an A4 page */
+      min-height: 100vh;
+      background: var(--body-bg-color);
+    }
+
+    button {
+      font-size: inherit;
+    }
+
+    body,
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5em;
+    }
+
+    body {
+      padding: 1.5em 1em;
+    }
+
+    h1 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+    }
+
+    h1>span:last-of-type {
+      font-size: 1.2rem;
+      font-weight: normal;
+    }
+
+    .main-title {
+      font-family: "Comic Relief";
+      font-weight: 700;
+    }
+
+    h1+p {
+      margin: 0;
+      text-align: center;
+    }
+
+    fieldset {
+      width: 100%;
+      padding: 0.5em 1em 1em 1em;
+      border-radius: 0.5em;
+    }
+
+    fieldset,
+    fieldset>legend,
+    button[type="submit"] {
+      background: var(--fieldset-bg-color);
+      border: 2px solid var(--fieldset-border-color);
+    }
+
+    button[type="submit"] {
+      padding: 0.5em 1em;
+      border-radius: 0.5em;
+      font-style: bold;
+    }
+
+    fieldset>legend {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5em;
+      width: 100%;
+      padding: 0.2em 0.5em;
+      border-radius: 0.3em;
+    }
+
+    fieldset>legend>span {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      font-size: 0.7rem;
+    }
+
+    .field-title {
+      display: inline-block;
+      font-family: "Comic Relief";
+      font-weight: 700;
+      font-size: 1.3rem;
+    }
+
+    label {
+      display: block;
+      margin: 1em 0;
+    }
+
+    div:has(textarea) {
+      margin: 1em auto 0 auto;
+      width: min-content;
+    }
+
+    .max-content {
+      width: max-content;
+    }
+
+    textarea {
+      display: block;
+      max-width: 500px;
+    }
+
+    .no-margin {
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-evenly;
+      flex-flow: row wrap;
+    }
+
+    .container-inlineblock {
+      display: inline-block;
+    }
+
+    .input-text,
+    input {
+      font-size: 1.05rem;
+    }
+
+    #form-relationship {
+      color: var(--placeholder-text-color);
+    }
+
+    .required::after {
+      content: " *";
+      color: var(--REQUIRED-text-color);
+      font-size: 1.5rem;
+    }
+
+    .optional::after {
+      content: " (Optional)"
+    }
+
+    body> :not(.background-style) {
+      position: relative;
+      z-index: 1;
+    }
+
+    .background-style {
+      position: fixed;
+      z-index: 0;
+      border: 3px dashed var(--decoration-border-color1);
+      border-radius: 50%;
+    }
+
+    .background-style.one {
+      width: 100vw;
+      height: 100vw;
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%);
+    }
+
+    .background-style.two {
+      width: 50vh;
+      height: 50vh;
+      bottom: 0;
+      right: 0;
+      border-color: var(--decoration-border-color2);
+      transform: translate(50%, 50%);
+    }
+
+    @media screen and (max-width: 410px) {
+      span.block {
+        display: block;
+      }
+    }
+
+    @media screen and (min-width: 340px) {
+      div:has(textarea) {
+        width: 80%;
+      }
+
+      textarea {
+        width: 100%;
+      }
+    }
+
+    @media only screen and (orientation: landscape) {
+      body {
+        padding: 1em 2em;
+      }
+
+      fieldset>legend {
+        padding: 0.2em 1.3em;
+      }
+
+      .background-style.one {
+        width: 50vw;
+        height: 50vw;
+      }
+
+      .background-style.two {
+        width: 100vh;
+        height: 100vh;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id="title">
+    <span class="main-title">How Amazing Am I?</span>
+    <span>Survey form</span>
+  </h1>
+  <p id="description">This survey collects opinions on how amazing I am.</p>
+
+  <form id="survey-form" method="POST" action="https://example.com">
+    <fieldset>
+      <legend aria-describedby="your-info">
+        <span class="field-title">Your information</span>
+        <span>Part 1 of 3</span>
+      </legend>
+
+      <p id="your-info">This information is used to send the results of the survey once the survey period ends.</p>
+
+      <label id="name-label" for="name" class="required input-text">
+          <span class="block">Your Name:</span>
+          <input id="name" 
+            name="name"
+            type="text"
+            minlength="3"
+            maxlength="40"
+            size="20"
+            required
+            placeholder="-- Enter your name --">
+        </label>
+
+      <label id="email-label" for="email" class="required input-text">
+          <span class="block">Your E-mail:</span>
+          <input id="email"
+            name="email"
+            type="email"
+            minlength="5"
+            maxlength="40"
+            size="20"
+            required
+            placeholder="-- Enter your email --">
+        </label>
+
+      <div class="container-inlineblock">
+        <p>Would you like to be contacted about future surveys?</p>
+        <div class="container">
+          <label for="form-happy-radio" class="input-text no-margin">
+              Yes
+              <input id="form-happy-radio" 
+                name="contact-about-future-surveys" 
+                type="radio" 
+                value="yes" 
+                checked>
+            </label>
+
+          <label for="form-sad-radio" class="input-text no-margin">
+              No
+              <input id="form-sad-radio" 
+                name="contact-about-future-surveys" 
+                type="radio" 
+                value="no">
+            </label>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend aria-describedby="our-recognition">
+        <span class="field-title">Who you are to me</span>
+        <span>Part 2 of 3</span>
+      </legend>
+
+      <p id="our-recognition">This section is about how we know each other.</p>
+
+      <label for="form-nick-name">
+          Your Nickname:<span class="optional"></span>
+          <input id="form-nick-name"
+          type="text"
+          maxlength="20"
+          size="20">
+        </label>
+
+      <label for="dropdown">
+          What is your relationship with me?
+          <select id="dropdown" 
+            class="input-text" 
+            name="relationship">
+            <option class="placeholder-text"
+              value=""
+              disabled>-- Relationship type --</option>
+            <option value="none">None</option>
+            <option value="aquaintance">Aquaintance</option>
+            <option value="colleague">Colleague</option>
+            <option value="class-mate">Class mate</option>
+            <option value="firend">Friend</option>
+            <option value="best-friend">Best friend</option>
+            <option value="business-partner">Business partner</option>
+            <option value="romantic-partner">Romantic partner</option>
+            <option value="child">My child</option>
+            <option value="parent">Parent</option>
+            <option value="other-family-member">Other family member</option>
+            <option value="other">Other</option>
+          </select>
+        </label>
+    </fieldset>
+    <fieldset>
+      <legend aria-describedby="form-opinion">
+        <span class="field-title">Your Opinion</span>
+        <span>Part 3 of 3</span>
+      </legend>
+
+      <p id="form-opinion">This section is about your opinion on me.</p>
+
+      <p class="optional">How old do you think I am?</p>
+      <label id="number-label" for="number" class="input-text">
+            <input id="number"
+            aria-describedby="form-age-measure"
+            name="age-guess"
+            type="number"
+            min="0"
+            max="150"
+            placeholder="-- Num --">
+            <span id="form-age-measure">years old</span>
+        </label>
+
+      <p>Which words best describes me.</p>
+
+      <div class="container">
+        <label for="form-iam-amazing">
+            <input
+              id="form-iam-amazing"
+              type="checkbox"
+              name="amazing"
+              value="describes-me"
+              checked
+            >
+            Amazing
+          </label>
+        <label for="form-iam-creative">
+            <input
+              id="form-iam-creative"
+              type="checkbox"
+              name="creative"
+              value="describes-me"
+            >
+            Creative
+          </label>
+        <label for="form-iam-positive">
+            <input
+              id="form-iam-positive"
+              type="checkbox"
+              name="positive"
+              value="describes-me"
+            >
+            Positive
+          </label>
+        <label for="form-iam-emotional">
+            <input
+              id="form-iam-emotional"
+              type="checkbox"
+              name="emotional"
+              value="describes-me"
+            >
+            Emotional
+          </label>
+        <label for="form-iam-logical">
+            <input
+              id="form-iam-logical"
+              type="checkbox"
+              name="logical"
+              value="describes-me"
+            >
+            Logical
+          </label>
+      </div>
+      <div>
+        <label
+            for="form-message-area"
+            class="max-content no-margin">Leave me a message.</label>
+        <textarea
+            id="form-message-area"
+            name="message-area"
+            cols="40"
+            rows="3"
+            maxlength="50"
+            placeholder="You are the most incredible person I've ever known, have some cake. 🍰"
+          ></textarea>
+      </div>
+    </fieldset>
+
+    <button id="submit" type="submit">Send Survey</button>
+  </form>
+  <div class="background-style one" aria-hidden="true"></div>
+  <div class="background-style two" aria-hidden="true"></div>
+</body>
+
+</html>
