@@ -1,21 +1,10 @@
-/* INFO: Default styles are for:
- * light mode
- * mobile-first 
- * veritcal layout 
-*/
-
 :root {
-/*  color-scheme: light dark; */
-
-  /* TODO: These are temp colours, change them to a set pallet */
   --backup-bg-color: #996699;
-  --body-bg-color: #ffffff99;/*white;*/
+  --body-bg-color: #ffffff99;
   --fieldset-bg-color: #ffffffaa;
-  /* TODO: Color pick this colour from the design once the colours are chosen */
   --fieldset-legend-bg-color: #ffffffaa; 
 
   --fieldset-border-color: skyblue;
-  /* INFO: Backgrounds should be a desaturated colour */
   --decoration-border-color1: #d0d0e1;
   --decoration-border-color2: #d0d0e1;
 
@@ -23,12 +12,9 @@
   --placeholder-text-color: grey;
 
   --REQUIRED-text-color: red;
-
-
-
 }
 
-  /*    +-----------------+
+/*    +-----------------+
  *    |  NORMILISATION  |
  *    +-----------------+
 */
@@ -94,12 +80,17 @@ h1 + p {
 
 fieldset {
   width: 100%;
-  padding: 0.5em 1em; 
+  padding: 0.5em 1em 1em 1em; 
   border-radius: 0.5em;
 }
-fieldset, fieldset > legend {
+fieldset, fieldset > legend, button[type="submit"] {
   background: var(--fieldset-bg-color);
   border: 2px solid var(--fieldset-border-color);
+}
+button[type="submit"] {
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  font-style: bold;
 }
 fieldset > legend {
   display: flex;
@@ -110,7 +101,7 @@ fieldset > legend {
   padding: 0.2em 0.5em;
   border-radius: 0.3em;
 }
-fieldset > legend > div {
+fieldset > legend > span {
   display: flex;
   align-items: center;
   font-weight: bold;
@@ -125,13 +116,28 @@ fieldset > legend > div {
 
 label {
   display: block;
+  margin: 1em 0;
 }
 
+div:has(textarea) {
+  margin: 1em auto 0 auto;
+  width: min-content;
+}
+.max-content {
+  width: max-content;
+}
+textarea {
+  display: block;
+  max-width: 500px;
+}
 
-
+.no-margin {
+  margin: 0;
+}
 .container {
   display: flex;
   justify-content: space-evenly;
+  flex-flow: row wrap;
 }
 .container-inlineblock {
   display: inline-block;
@@ -188,25 +194,26 @@ body > :not(.background-style) {
   transform: translate(50%, 50%);
 }
 
-/* TODO: Syle radio buttons with happy and sad emojies 
-
-.form-happy-radio {}
-.form-sad-radio {}
-*/
-
 
 /*    +----------------+
  *    |  SCREEN SIZES  |
  *    +----------------+
 */
 
-/* TODO: on styles to be altered on larger screen
+@media screen and (max-width: 410px) {
+  span.block {
+    display: block;
+  }
+}
 
-/* input[size] may need changing for brreak points and horizontal  */
-
-
-
-
+@media screen and (min-width: 340px) {
+  div:has(textarea) {
+    width: 80%;
+  }
+  textarea {
+    width: 100%;
+  }
+}
 
 
 /* INFO: Horizontal styles */
@@ -228,18 +235,3 @@ body > :not(.background-style) {
   }
 }
 
-
-/*    +----------------+
- *    |  COLOR SCHEME  |
- *    +----------------+
-*/
-
-/*
-@media only screen and (prefers-color-scheme: dark) { 
-  :root {
-     TODO: set new colours to be used 
-  }
-
-
-}
-*/
