@@ -23,5 +23,5 @@ This project has a video at:
 
 <img width="200px" height="auto" 
   alt="cert, survey form project" 
-  src="" />
+  src="https://github.com/Gre-mie/freeCodeCamp_certs/blob/main/project-screenshots/pngs/cert-survey-form.png?raw=true" />
 
