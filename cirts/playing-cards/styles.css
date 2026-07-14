@@ -1,0 +1,177 @@
+/* Boilerplate CSS file */
+
+:root {
+
+  --card-aspect-ratio: 3/4;
+
+  /*
+  --title-border-color: ;
+  */
+
+
+
+}
+
+/*    +-----------------+
+ *    |  NORMILISATION  |
+ *    +-----------------+
+*/
+
+html {
+  box-sizing: border-box;
+}
+html * {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Verdana, Arial, sans-serif;
+}
+
+button {
+  font-size: inherit;
+}
+
+
+/*    +---------------+
+ *    |  MAIN STYLES  |
+ *    +---------------+
+*/
+
+
+/* INFO: TEST STYLES vvv */
+
+* {border: 1px solid red;}
+html {border: none;}
+body {border: 3px solid skyblue;}
+main {border: 2px solid lime;}
+
+.card {border: 3px solid blue;}
+.left {border: 2px solid orange;}
+.middle {border: 2px solid pink;}
+.right {border: 2px solid yellow;}
+.top {border: 1px solid green;}
+.bottom {border: 1px solid blue;}
+.key {border: 1px solid black;}
+
+.rotate {background: skyblue;}
+.num {background: pink;}
+.type {background: burlywood;}
+
+
+.card > * {
+  min-width: 30px;
+  min-height: 30px;
+  width: min-content;
+  height: min-content;
+}
+
+/* INFO: TEST STYLES ^^^ */
+
+
+h1 {
+  width: max-content;
+  margin: 1em auto;
+  padding: 0.25em 1.5em;
+
+  border: 2px dashed var(--title-border-color, black);
+}
+span {
+  text-align: center;
+  width: max-content;
+  height: max-content;
+}
+h2 {
+  margin: 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* INFO: Helpful classes */
+.rotate {
+
+  border-style: dashed; /**/
+}
+
+
+
+/* INFO: Content styles */
+#playing-cards {
+  margin: 1em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+/* TODO: - style card with colours and make it look like a card 
+         - font-size/em should scale with the card width... somehow
+*/
+.card {
+  padding: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  aspect-ratio: var(--card-aspect-ratio, 3/4);
+  min-width: 200px;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+}
+
+.middle {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* WARNING: Don't move this, its one of the user stories */
+  align-self: center;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+
+  align-self: flex-end;
+}
+
+.top, .bottom {
+  /* TODO: 
+        -Make items place themselves in 2 columns or one at the end 
+        I may need grid for this.
+          take a look at grid areas also
+        - items should also be aligned in the center
+   */
+}
+
+
+
+
+
+/* TODO: style button and fix it to bottom right corner of viewport */
+/* TODO: style the buttons states, hover, active, focus */
+
+
+
+/*    +----------------+
+ *    |  SCREEN SIZES  |
+ *    +----------------+
+*/
+
+
+/*    +----------------+
+ *    |  COLOR SCHEME  |
+ *    +----------------+
+*/
+
+/* INFO: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/color-scheme
+@media only screen and (prefers-color-scheme: ) {  TODO: detect non default scheme and change colours accordingly 
+  :root {
+     TODO: set new colours to be used 
+  }
+}
+*/
+
