@@ -38,9 +38,9 @@
     >
 
 
-      <div class="card" aria-describedby="">
+      <div class="card" aria-describedby="face-emoji">
         <div class="left">
-          <h2 class="num">2</h2>
+          <span class="num">2</span>
           <span class="type">😋</span>
         </div>
 
@@ -49,21 +49,21 @@
           <div class="top">
             <span>😋</span>
           </div>
-          <div class="bottom">
+          <div class="bottom rotate">
             <span>😋</span>
           </div>
         </div>
 
         <div class="right rotate" aria-hidden="true">
-          <h2 class="num">2</h2>
+          <span class="num">2</span>
           <span class="type">😋</span>
         </div>
       </div>
 
 
-      <div class="card" aria-describedby="">
+      <div class="card" aria-describedby="devil-emoji">
         <div class="left">
-          <h2 class="num">3</h2>
+          <span class="num">3</span>
           <span class="type">😈</span>
         </div>
 
@@ -73,21 +73,52 @@
             <span>😈</span>
             <span>😈</span>
           </div>
-          <div class="bottom">
+          <div class="bottom rotate">
             <span>😈</span>
           </div>
         </div>
 
         <div class="right rotate" aria-hidden="true">
-          <h2 class="num">3</h2>
+          <span class="num">3</span>
           <span class="type">😈</span>
         </div>
       </div>
 
 
-      <div class="card" aria-describedby="">
+      <div class="card" aria-describedby="face-emoji">
         <div class="left">
-          <h2 class="num">10</h2>
+          <span class="num">10</span>
+          <span class="type">😋</span>
+        </div>
+
+        <div class="middle" aria-hidden="true">
+<!-- INFO: emojie elements are placed inside the .top and .bottom containers-->
+          <div class="top">
+            <span>😋</span>
+            <span>😋</span>
+            <span>😋</span>
+            <span>😋</span>
+            <span>😋</span>
+          </div>
+          <div class="bottom rotate">
+            <span>😋</span>
+            <span>😋</span>
+            <span>😋</span>
+            <span>😋</span>
+            <span>😋</span>
+          </div>
+        </div>
+
+        <div class="right rotate" aria-hidden="true">
+          <span class="num">10</span>
+          <span class="type">😋</span>
+        </div>
+      </div>
+
+
+      <div class="card" aria-describedby="duck-emoji">
+        <div class="left">
+          <span class="num">10</span>
           <span class="type">🦆</span>
         </div>
 
@@ -100,7 +131,7 @@
             <span>🦆</span>
             <span>🦆</span>
           </div>
-          <div class="bottom">
+          <div class="bottom rotate">
             <span>🦆</span>
             <span>🦆</span>
             <span>🦆</span>
@@ -110,102 +141,13 @@
         </div>
 
         <div class="right rotate" aria-hidden="true">
-          <h2 class="num">10</h2>
+          <span class="num">10</span>
           <span class="type">🦆</span>
         </div>
       </div>
 
 
-      <div class="card" aria-describedby="">
-        <div class="left">
-          <h2 class="num">2</h2>
-          <span class="type">😋</span>
-        </div>
 
-        <div class="middle" aria-hidden="true">
-<!-- INFO: emojie elements are placed inside the .top and .bottom containers-->
-          <div class="top">
-            <span>😋</span>
-          </div>
-          <div class="bottom">
-            <span>😋</span>
-          </div>
-        </div>
-
-        <div class="right rotate" aria-hidden="true">
-          <h2 class="num">2</h2>
-          <span class="type">😋</span>
-        </div>
-      </div>
-
-
-      <div class="card" aria-describedby="">
-        <div class="left">
-          <h2 class="num">2</h2>
-          <span class="type">😋</span>
-        </div>
-
-        <div class="middle" aria-hidden="true">
-<!-- INFO: emojie elements are placed inside the .top and .bottom containers-->
-          <div class="top">
-            <span>😋</span>
-          </div>
-          <div class="bottom">
-            <span>😋</span>
-          </div>
-        </div>
-
-        <div class="right rotate" aria-hidden="true">
-          <h2 class="num">2</h2>
-          <span class="type">😋</span>
-        </div>
-      </div>
-
-
-      <div class="card" aria-describedby="">
-        <div class="left">
-          <h2 class="num">2</h2>
-          <span class="type">😋</span>
-        </div>
-
-        <div class="middle" aria-hidden="true">
-<!-- INFO: emojie elements are placed inside the .top and .bottom containers-->
-          <div class="top">
-            <span>😋</span>
-          </div>
-          <div class="bottom">
-            <span>😋</span>
-          </div>
-        </div>
-
-        <div class="right rotate" aria-hidden="true">
-          <h2 class="num">2</h2>
-          <span class="type">😋</span>
-        </div>
-      </div>
-
-
-      <div class="card" aria-describedby="">
-        <div class="left">
-          <h2 class="num">2</h2>
-          <span class="type">😋</span>
-        </div>
-
-        <div class="middle" aria-hidden="true">
-<!-- INFO: emojie elements are placed inside the .top and .bottom containers-->
-          <div class="top">
-            <span>😋</span>
-          </div>
-          <div class="bottom">
-            <span>😋</span>
-          </div>
-        </div>
-
-        <div class="right rotate" aria-hidden="true">
-          <h2 class="num">2</h2>
-          <span class="type">😋</span>
-        </div>
-      </div>
 
 
     </main>
@@ -215,7 +157,7 @@
           - style button states, hover, active, focuse etc.
           - fix button to bottom right corner of screen
     -->
-    <button >New Cards</button>
+    <button id="deal-btn" >Deal Cards</button>
 
     <script src="./script.js"></script>
   </body>

@@ -2,13 +2,37 @@
 
 :root {
 
+/* color palette
+
+green #0b500d
+white #eeece0
+yellow #f2e725
+red #6f0708
+
+*/
+
   --card-aspect-ratio: 3/4;
 
-  /*
-  --title-border-color: ;
-  */
+  --card-font-size: 1.5rem;
+  --button-font-size: 1.5rem;
+
+  --border-size: 0.2rem;
+
+  /* INFO: Colors */
 
 
+  --main-font-color: #f2e725;
+  --card-font-color: black;
+  --button-font-color: #e2efe4;
+
+  --main-bg-color: #0b500d;
+  --card-bg-color: #eeece0;
+  --button-bg-color: #0b500d;
+
+  --title-border-color: var(--main-font-color, black);
+  --button-border-color: var(--button-font-color, black);
+
+  /* TODO: Add shadow to buttons and cards */
 
 }
 
@@ -28,10 +52,8 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: Verdana, Arial, sans-serif;
-}
-
-button {
-  font-size: inherit;
+  color: var(--main-font-color, black);
+  background: var(--main-bg-color, white);
 }
 
 
@@ -40,43 +62,12 @@ button {
  *    +---------------+
 */
 
-
-/* INFO: TEST STYLES vvv */
-
-* {border: 1px solid red;}
-html {border: none;}
-body {border: 3px solid skyblue;}
-main {border: 2px solid lime;}
-
-.card {border: 3px solid blue;}
-.left {border: 2px solid orange;}
-.middle {border: 2px solid pink;}
-.right {border: 2px solid yellow;}
-.top {border: 1px solid green;}
-.bottom {border: 1px solid blue;}
-.key {border: 1px solid black;}
-
-.rotate {background: skyblue;}
-.num {background: pink;}
-.type {background: burlywood;}
-
-
-.card > * {
-  min-width: 30px;
-  min-height: 30px;
-  width: min-content;
-  height: min-content;
-}
-
-/* INFO: TEST STYLES ^^^ */
-
-
 h1 {
   width: max-content;
   margin: 1em auto;
   padding: 0.25em 1.5em;
 
-  border: 2px dashed var(--title-border-color, black);
+  border: var(--border-size, 0.2rem) dashed var(--title-border-color, black);
 }
 span {
   text-align: center;
@@ -91,15 +82,13 @@ h2 {
 
 /* INFO: Helpful classes */
 .rotate {
-
-  border-style: dashed; /**/
+  transform: rotate(180deg);
 }
-
 
 
 /* INFO: Content styles */
 #playing-cards {
-  margin: 1em;
+  margin: 1em auto;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -108,14 +97,22 @@ h2 {
 }
 
 /* TODO: - style card with colours and make it look like a card 
-         - font-size/em should scale with the card width... somehow
 */
 .card {
+  font-size: var(--card-font-size, 2rem);
   padding: 0.5em;
   display: flex;
   justify-content: space-between;
+  gap: 0.5em;
   aspect-ratio: var(--card-aspect-ratio, 3/4);
-  min-width: 200px;
+  width: 200px; /* change this to 250px */ 
+  overflow: scroll;
+  color: var(--card-font-color, black);
+  background: var(--card-bg-color, white);
+  border-radius: 0.5em;
+}
+.card span {
+  margin: 0 auto;
 }
 
 .left {
@@ -123,28 +120,51 @@ h2 {
   flex-direction: column;
   align-self: flex-start;
 }
-
 .middle {
   width: 100%;
   display: flex;
   flex-direction: column; /* WARNING: Don't move this, its one of the user stories */
   align-self: center;
+  gap: 0.5em;
 }
-
 .right {
   display: flex;
   flex-direction: column;
-
   align-self: flex-end;
 }
 
+.num {
+  font-weight: bold;
+}
+.type {
+  font-size: 0.8em;
+}
+
 .top, .bottom {
-  /* TODO: 
-        -Make items place themselves in 2 columns or one at the end 
-        I may need grid for this.
-          take a look at grid areas also
-        - items should also be aligned in the center
-   */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  gap: 0.2em;
+}
+.top span, .bottom span {
+  margin: 0;
+}
+
+
+#deal-btn {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 1em;
+  padding: 0.5em 1em;
+  color: var(--button-font-color, black);
+  font-size: var(--button-font-size, 1.5rem);
+
+  background: var(--button-bg-color, white);
+  border: var(--border-size, 0.2rem) solid var(--button-border-color, black);
+  border-radius: 0.5em;
 }
 
 
@@ -159,6 +179,23 @@ h2 {
 /*    +----------------+
  *    |  SCREEN SIZES  |
  *    +----------------+
+*/
+
+/*
+ TODO:
+ - Use screen breaks to resize 
+      .card element 
+        with: 200px 250px 300px
+        font-size             1.5rem ???rem 2rem
+            --card-font-size: 1.5rem;
+
+      large screens should have the button fixed to bottom right corner
+      mobile should have button fixed to the top center
+          leave gap for cards, with top margin on playing cards
+
+      large screens should make room for the button by giving
+        #playing-cards
+          width: persentage
 */
 
 
