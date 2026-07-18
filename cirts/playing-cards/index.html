@@ -23,20 +23,25 @@
   <body>
     <h1>Playing Cards</h1>
 
-    <!-- TODO: Hide this from sighted users, to be used by screenreaders as 
-               a place for descriptions 'aria-describedby'-->
-    <div>
+    <div class="sr-only">
       <p id="cake-emoji">A slice of cake.</p>
       <p id="devil-emoji">A mischievous grinning with horns.</p>
       <p id="face-emoji">A smiling face with closed eyes and tounge sticking out.</p>
       <p id="duck-emoji">A duck shown from the side.</p>
     </div>
-    
+
+    <!-- TODO: 
+          - add onclick function
+          - style button, should be very easy to see
+          - style button states, hover, active, focuse etc.
+          - fix button to bottom right corner of screen
+    -->
+    <button id="deal-btn" >Deal Cards</button>
+ 
     <main 
       id="playing-cards"
       data-types="😋😈🦆🍰"
     >
-
 
       <div class="card" aria-describedby="face-emoji">
         <div class="left">
@@ -45,7 +50,6 @@
         </div>
 
         <div class="middle" aria-hidden="true">
-<!-- INFO: emojie elements are placed inside the .top and .bottom containers-->
           <div class="top">
             <span>😋</span>
           </div>
@@ -57,6 +61,59 @@
         <div class="right rotate" aria-hidden="true">
           <span class="num">2</span>
           <span class="type">😋</span>
+        </div>
+      </div>
+
+
+      <div class="card" aria-describedby="cake-emoji">
+        <div class="left">
+          <span class="num">7</span>
+          <span class="type">🍰</span>
+        </div>
+
+        <div class="middle" aria-hidden="true">
+          <div class="top">
+            <span>🍰</span>
+            <span>🍰</span>
+            <span>🍰</span>
+            <span>🍰</span>
+          </div>
+          <div class="bottom rotate">
+            <span>🍰</span>
+            <span>🍰</span>
+            <span>🍰</span>
+          </div>
+        </div>
+
+        <div class="right rotate" aria-hidden="true">
+          <span class="num">7</span>
+          <span class="type">🍰</span>
+        </div>
+      </div>
+
+
+      <div class="card" aria-describedby="devil-emoji">
+        <div class="left">
+          <span class="num">6</span>
+          <span class="type">😈</span>
+        </div>
+
+        <div class="middle" aria-hidden="true">
+          <div class="top">
+            <span>😈</span>
+            <span>😈</span>
+            <span>😈</span>
+          </div>
+          <div class="bottom rotate">
+            <span>😈</span>
+            <span>😈</span>
+            <span>😈</span>
+          </div>
+        </div>
+
+        <div class="right rotate" aria-hidden="true">
+          <span class="num">6</span>
+          <span class="type">😈</span>
         </div>
       </div>
 
@@ -68,7 +125,6 @@
         </div>
 
         <div class="middle" aria-hidden="true">
-<!-- INFO: emojie elements are placed inside the .top and .bottom containers-->
           <div class="top">
             <span>😈</span>
             <span>😈</span>
@@ -92,7 +148,6 @@
         </div>
 
         <div class="middle" aria-hidden="true">
-<!-- INFO: emojie elements are placed inside the .top and .bottom containers-->
           <div class="top">
             <span>😋</span>
             <span>😋</span>
@@ -116,14 +171,34 @@
       </div>
 
 
+      <div class="card" aria-describedby="cake-emoji">
+        <div class="left">
+          <span class="num">1</span>
+          <span class="type">🍰</span>
+        </div>
+
+        <div class="middle" aria-hidden="true">
+          <div class="top">
+            <span>🍰</span>
+          </div>
+          <div class="bottom rotate">
+          </div>
+        </div>
+
+        <div class="right rotate" aria-hidden="true">
+          <span class="num">1</span>
+          <span class="type">🍰</span>
+        </div>
+      </div>
+
+
       <div class="card" aria-describedby="duck-emoji">
         <div class="left">
-          <span class="num">10</span>
+          <span class="num">9</span>
           <span class="type">🦆</span>
         </div>
 
         <div class="middle" aria-hidden="true">
-<!-- INFO: emojie elements are placed inside the .top and .bottom containers-->
           <div class="top">
             <span>🦆</span>
             <span>🦆</span>
@@ -136,29 +211,19 @@
             <span>🦆</span>
             <span>🦆</span>
             <span>🦆</span>
-            <span>🦆</span>
           </div>
         </div>
 
         <div class="right rotate" aria-hidden="true">
-          <span class="num">10</span>
+          <span class="num">9</span>
           <span class="type">🦆</span>
         </div>
       </div>
 
-
-
-
-
     </main>
-    <!-- TODO: 
-          - add onclick function
-          - style button, should be very easy to see
-          - style button states, hover, active, focuse etc.
-          - fix button to bottom right corner of screen
-    -->
-    <button id="deal-btn" >Deal Cards</button>
+
 
     <script src="./script.js"></script>
   </body>
 </html>
+
