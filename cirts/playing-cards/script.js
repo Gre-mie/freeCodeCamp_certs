@@ -1,4 +1,5 @@
-console.log("working");
+console.log("Log: Reading script.js...");
+
 
 /*
 TODO: 
@@ -13,7 +14,17 @@ TODO:
 
 
     REMEMBER:  To change the 'aria-describedby' to the correct card type
-
-
-
 */
+
+/* TODO:  change this to an event handler */
+/* https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener */
+function deal() {
+
+  console.log("deal-btn pressed");
+
+}
+
+
+
+
+console.log("Log: script.js read")
