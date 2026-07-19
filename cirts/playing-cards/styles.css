@@ -22,6 +22,7 @@
   --card-border-color: #6f0708;
   --button-border-color: var(--button-font-color, black);
 
+  --btn-highlight: #f2e725;
   --shadow-color: black;
 }
 
@@ -171,11 +172,18 @@ h2 {
   border-radius: 0.5em;
   box-shadow: 0 0 0.2em var(--shadow-color);
 }
-
-/* TODO: remove button shadow when active */
-
-/* TODO: style the buttons states, hover, active, focus */
-
+/* skyblue is used instead of yellow for visibility when all vars cant be found */
+#deal-btn:hover {
+  border-color: var(--btn-highlight, skyblue);
+}
+#deal-btn:focus-visible {
+  border-color: var(--btn-highlight, skyblue);
+  outline: solid var(--btn-highlight, skyblue);
+}
+#deal-btn:active {
+  color: var(--btn-highlight, skyblue);
+  box-shadow: none;
+}
 
 
 /*    +----------------+
