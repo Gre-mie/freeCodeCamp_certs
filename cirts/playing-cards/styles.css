@@ -116,7 +116,7 @@ h2 {
   color: var(--card-font-color, black);
   background: var(--card-bg-color, white);
   border-radius: 0.5em;
-  box-shadow: 0 0 0.5em; var(--shadow-color);
+  box-shadow: 0 0 0.5em var(--shadow-color);
 }
 .card span {
   margin: 0 auto;
