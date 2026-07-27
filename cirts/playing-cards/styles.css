@@ -76,7 +76,14 @@ h2 {
 
 /* INFO: Helpful classes */
 .rotate {
-  transform: rotate(180deg);
+  animation: spin 1ms;
+  animation-play-state: paused;
+}
+/* paused animation used to fix bug when rotating emojies */
+@keyframes spin {
+  0% {
+    transform: rotate(180deg);
+  }
 }
 
 /* Screen Reader Only artical that was helpful */

@@ -3,13 +3,14 @@ console.log("Log: Reading script.js...");
 let mainEl = document.getElementById('playing-cards')
 const DeckRange = 10;
 const CardTypes = getTypes(mainEl.getAttribute('data-types'));
-const DealOut = 7;
+const DeckSize = 7;
 
 
 console.log(`
   Deck range: ${DeckRange}\n
   Card types: [${CardTypes}]\n
-  Deal out: ${DealOut}`); //
+  Deck size: ${DeckSize}`); //
+
 
 
 // returns an array of emojies - emojies count as more than one charactor when indexing
@@ -29,6 +30,32 @@ function getTypes(str) {
   return emojiArr;
 }
 
+  /*
+   * - add number id to each card in html, card1
+   * - append 'i' when searching, querySelectorAll, getElementById
+   *   'card${i} middle'
+   *   'card${i} type'
+   *   'card${i} num'
+   */
+
+// generates and populates one card 
+function newCard(card) {
+  let typeIndex = Math.floor(Math.random() * CardTypes.length);
+  let num = Math.floor(Math.random() * DeckRange) + 1;
+
+  console.log(`
+type index: ${typeIndex}
+type: ${CardTypes[typeIndex]}
+num: ${num}
+`)
+
+  console.log("newCard funciton card: ")
+  console.log(card)
+
+}
+
+
+
 
 /*
 TODO: 
@@ -40,12 +67,18 @@ TODO:
 function deal() {
   console.log("deal-btn pressed"); //
 
- 
+  // loop cards and repopulate
+  for (let i = 1; i <= DeckSize; i++) {
+    newCard(document.getElementById(`card${i}`));
+  }
+
+
+
 
 
 }
 
 
-
+deal(); // testing
 
 console.log("Log: script.js read")
