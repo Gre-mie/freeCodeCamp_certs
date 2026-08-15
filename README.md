@@ -21,10 +21,11 @@ This project has a video at:
 
 <img width="200px" height="auto" 
   alt="lab, moon orbit project" 
-  src="" />
+  src="https://github.com/Gre-mie/freeCodeCamp_certs/blob/main/project-screenshots/pngs/lab-newspaper-artical.png?raw=true" />
 
 This project has a video at:
 
+- <a href="https://youtu.be/6In3xkc7hMM" >Video on Youtube</a>
 - ./project-screenshots/gifs/newspaper-artical-2026-08-15_19.24.48.mkv
 
 
@@ -40,9 +41,10 @@ This project has a video at:
 
 <img width="200px" height="auto"
   alt="cert, playing cards project"
-  src="" />
+  src="https://github.com/Gre-mie/freeCodeCamp_certs/blob/main/project-screenshots/pngs/cert-playing-cards.png?raw=true" />
 
 This project has a video at:
 
+- <a href="https://youtu.be/bfqPTWYGoVQ" >Video on Youtube</a>
 - ./project-screenshots/gifs/cirt-playing-cards-2026-08-15_19.26.22.mkv
 
