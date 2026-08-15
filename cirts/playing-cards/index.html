@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="An application that generates emoji cards from 1-10.">
+    <meta name="keywords" content="card, emojie, generate">
+
+    <meta name="robots" content="all noarchive nocache">
+
+    <link rel="stylesheet" href="./styles.css">
+
+    <meta property="og:url" content="https://example.com/playing-cards">
+    <meta property="og:title" content="Playing Cards">
+    <meta property="og:description" content="An application that generates emoji cards from 1-10.">
+    <meta property="og:type" content="website">
+
+    <meta name="application-name" content="Playing Cards" lang="en">
+    <title>Playing cards</title>
+  </head>
+  <body>
+    <h1>Playing Cards</h1>
+
+    <div class="sr-only">
+      <p id="cake-emoji">A slice of cake.</p>
+      <p id="devil-emoji">A mischievous grinning with horns.</p>
+      <p id="face-emoji">A smiling face with closed eyes and tounge sticking out.</p>
+      <p id="duck-emoji">A duck shown from the side.</p>
+    </div>
+
+    <!-- TODO: 
+          - add onclick function
+          - style button, should be very easy to see
+          - style button states, hover, active, focuse etc.
+          - fix button to bottom right corner of screen
+    -->
+<!-- TODO: change this to an event handler -->
+    <button 
+      id="deal-btn" 
+      type="button"
+      onclick="deal()" 
+    >Deal Cards</button>
+ 
+    <main 
+      id="playing-cards"
+      data-types="😋😈🦆🍰"
+    >
+
+
+    <!-- TODO: fix bug with .bottom dissapearing when rotated -->
+      <div id="card1" class="card" aria-describedby="face-emoji">
+        <div class="left">
+          <span class="num">2</span>
+          <span class="type">😋</span>
+        </div>
+
+        <div class="middle" aria-hidden="true">
+          <div class="top">
+            <span>😋</span>
+          </div>
+          <div class="bottom rotate">
+            <span>😋</span>
+          </div>
+        </div>
+
+        <div class="right rotate" aria-hidden="true">
+          <span class="num">2</span>
+          <span class="type">😋</span>
+        </div>
+      </div>
+
+
+      <div id="card2" class="card" aria-describedby="cake-emoji">
+        <div class="left">
+          <span class="num">7</span>
+          <span class="type">🍰</span>
+        </div>
+
+        <div class="middle" aria-hidden="true">
+          <div class="top">
+            <span>🍰</span>
+            <span>🍰</span>
+            <span>🍰</span>
+            <span>🍰</span>
+          </div>
+          <div class="bottom rotate">
+            <span>🍰</span>
+            <span>🍰</span>
+            <span>🍰</span>
+          </div>
+        </div>
+
+        <div class="right rotate" aria-hidden="true">
+          <span class="num">7</span>
+          <span class="type">🍰</span>
+        </div>
+      </div>
+
+
+      <div id="card3" class="card" aria-describedby="devil-emoji">
+        <div class="left">
+          <span class="num">6</span>
+          <span class="type">😈</span>
+        </div>
+
+        <div class="middle" aria-hidden="true">
+          <div class="top">
+            <span>😈</span>
+            <span>😈</span>
+            <span>😈</span>
+          </div>
+          <div class="bottom rotate">
+            <span>😈</span>
+            <span>😈</span>
+            <span>😈</span>
+          </div>
+        </div>
+
+        <div class="right rotate" aria-hidden="true">
+          <span class="num">6</span>
+          <span class="type">😈</span>
+        </div>
+      </div>
+
+
+      <div id="card4" class="card" aria-describedby="devil-emoji">
+        <div class="left">
+          <span class="num">3</span>
+          <span class="type">😈</span>
+        </div>
+
+        <div class="middle" aria-hidden="true">
+          <div class="top">
+            <span>😈</span>
+            <span>😈</span>
+          </div>
+          <div class="bottom rotate">
+            <span>😈</span>
+          </div>
+        </div>
+
+        <div class="right rotate" aria-hidden="true">
+          <span class="num">3</span>
+          <span class="type">😈</span>
+        </div>
+      </div>
+
+
+      <div id="card5" class="card" aria-describedby="face-emoji">
+        <div class="left">
+          <span class="num">10</span>
+          <span class="type">😋</span>
+        </div>
+
+        <div class="middle" aria-hidden="true">
+          <div class="top">
+            <span>😋</span>
+            <span>😋</span>
+            <span>😋</span>
+            <span>😋</span>
+            <span>😋</span>
+          </div>
+          <div class="bottom rotate">
+            <span>😋</span>
+            <span>😋</span>
+            <span>😋</span>
+            <span>😋</span>
+            <span>😋</span>
+          </div>
+        </div>
+
+        <div class="right rotate" aria-hidden="true">
+          <span class="num">10</span>
+          <span class="type">😋</span>
+        </div>
+      </div>
+
+      <div id="card6" class="card" aria-describedby="cake-emoji">
+        <div class="left">
+          <span class="num">1</span>
+          <span class="type">🍰</span>
+        </div>
+
+        <div class="middle" aria-hidden="true">
+          <div class="top">
+            <span>🍰</span>
+          </div>
+          <div class="bottom rotate">
+          </div>
+        </div>
+
+        <div class="right rotate" aria-hidden="true">
+          <span class="num">1</span>
+          <span class="type">🍰</span>
+        </div>
+      </div>
+
+      <div id="card7" class="card" aria-describedby="duck-emoji">
+        <div class="left">
+          <span class="num">9</span>
+          <span class="type">🦆</span>
+        </div>
+
+        <div class="middle" aria-hidden="true">
+          <div class="top">
+            <span>🦆</span>
+            <span>🦆</span>
+            <span>🦆</span>
+            <span>🦆</span>
+            <span>🦆</span>
+          </div>
+          <div class="bottom rotate">
+            <span>🦆</span>
+            <span>🦆</span>
+            <span>🦆</span>
+            <span>🦆</span>
+          </div>
+        </div>
+
+        <div class="right rotate" aria-hidden="true">
+          <span class="num">9</span>
+          <span class="type">🦆</span>
+        </div>
+      </div>
+
+    </main>
+
+
+    <script src="./script.js"></script>
+  </body>
+</html>
+
