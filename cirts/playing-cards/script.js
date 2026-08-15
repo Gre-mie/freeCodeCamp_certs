@@ -35,10 +35,6 @@ function newCard(cardId) {
   let type = CardTypes[typeIndex];
   let num = Math.floor(Math.random() * DeckRange) + 1;
 
-/*
-TODO: 
-    This is not working... fix it so it does
-*/
   let card = document.getElementById(cardId);
   switch (type) {
     case "😋":
@@ -57,13 +53,6 @@ TODO:
       console.log("Error: aria-describedby not updated...")
   }
 
-  console.log(`
-card: ${cardId}
-type: '${CardTypes[typeIndex]}'
-num: ${num}
-aria: ${card.getAttribute("aria-describedby")}
-`)//
-
   let numArr = document.querySelectorAll(`#${cardId} .num`);
   for (let i = 0; i < numArr.length; i++ ) {
     numArr[i].innerHTML = `${num}`;
@@ -75,7 +64,6 @@ aria: ${card.getAttribute("aria-describedby")}
     typeArr[i].innerHTML = CardTypes[typeIndex];
   }
 
-  // TODO: set .middle top and bottom
   // set top and bottom areas to emoji strings representing the card number
   let top = Math.ceil(num / 2);
   let bottom = num - top;
@@ -84,16 +72,12 @@ aria: ${card.getAttribute("aria-describedby")}
   let bottomStr = getEmojiHTMLString(CardTypes[typeIndex], bottom);
   document.querySelector(`#${cardId} .top`).innerHTML = topStr;
   document.querySelector(`#${cardId} .bottom`).innerHTML = bottomStr;
-
 }
 
-/* TODO:  change this to an event handler */
-/* https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener */
 function deal() {
   // loop cards and repopulate
   for (let i = 1; i <= DeckSize; i++) {
     newCard(`card${i}`);
   }
-
 }
 

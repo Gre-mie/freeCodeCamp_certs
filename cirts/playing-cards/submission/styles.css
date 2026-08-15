@@ -1,0 +1,243 @@
+/* Boilerplate CSS file */
+
+:root {
+  --card-aspect-ratio: 3/4;
+
+  --card-font-size: 1.5rem;
+  --button-font-size: 1.5rem;
+
+  --border-size: 0.2rem;
+
+  /* INFO: Colors */
+
+  --main-font-color: #f2e725;
+  --card-font-color: black;
+  --button-font-color: #e2efe4;
+
+  --main-bg-color: #0b500d;
+  --card-bg-color: #eeece0;
+  --button-bg-color: #0b500d77; /* slightly opaque so users can see cards beneeth it */
+
+  --title-border-color: var(--main-font-color, black);
+  --card-border-color: #6f0708;
+  --button-border-color: var(--button-font-color, black);
+
+  --btn-highlight: #f2e725;
+  --shadow-color: black;
+}
+
+/*    +-----------------+
+ *    |  NORMILISATION  |
+ *    +-----------------+
+*/
+
+html {
+  box-sizing: border-box;
+}
+html * {
+  box-sizing: inherit;
+
+}
+
+body {
+  position: relative;
+  display: flex;
+  flex-flow: column wrap;
+  max-width: 100vw;
+  margin: 0 0.5em 1em 0.5em;
+  padding: 0;
+  min-height: 100vh;
+  font-family: Verdana, Arial, sans-serif;
+  color: var(--main-font-color, black);
+  background: var(--main-bg-color, white);
+}
+
+
+/*    +---------------+
+ *    |  MAIN STYLES  |
+ *    +---------------+
+*/
+
+h1 {
+  padding: 0.25em 1.5em;
+  text-align: center;
+  border: var(--border-size, 0.2rem) dashed var(--title-border-color, black);
+}
+span {
+  text-align: center;
+  width: max-content;
+  height: max-content;
+}
+h2 {
+  margin: 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* INFO: Helpful classes */
+.rotate {
+  animation: spin 1ms;
+  animation-play-state: paused;
+}
+/* paused animation used to fix bug when rotating emojies */
+@keyframes spin {
+  0% {
+    transform: rotate(180deg);
+  }
+}
+
+/* Screen Reader Only artical that was helpful */
+/* https://stackoverflow.com/questions/62107074/how-to-hide-a-text-and-make-it-accessible-by-screen-reader */
+.sr-only {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  border: none;
+}
+
+/* INFO: Content styles */
+#playing-cards {
+  margin: 1em auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* WARNING: Dont change this, its a user story */
+}
+
+.card {
+  font-size: var(--card-font-size, 2rem);
+  padding: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5em;
+  aspect-ratio: var(--card-aspect-ratio, 3/4);
+  width: 200px; 
+  overflow: scroll;
+  color: var(--card-font-color, black);
+  background: var(--card-bg-color, white);
+  border-radius: 0.5em;
+  box-shadow: 0 0 0.5em var(--shadow-color);
+}
+.card span {
+  margin: 0 auto;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+}
+.middle {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* WARNING: Don't move this, its one of the user stories */
+  align-self: center;
+  gap: 0.5em;
+}
+.right {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+}
+
+.num {
+  font-weight: bold;
+}
+.type {
+  font-size: 0.8em;
+}
+
+.top, .bottom {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  gap: 0.2em;
+}
+.top span, .bottom span {
+  margin: 0;
+}
+
+#deal-btn {
+  z-index: 1;
+  margin: 0;
+  padding: 0.5em 1em;
+  height: max-content;
+  color: var(--button-font-color, black);
+  font-size: var(--button-font-size, 1.5rem);
+
+  background: var(--button-bg-color, white);
+  border: var(--border-size, 0.2rem) solid var(--button-border-color, black);
+  border-radius: 0.5em;
+  box-shadow: 0 0 0.2em var(--shadow-color);
+}
+/* skyblue is used instead of yellow for visibility when all vars cant be found */
+#deal-btn:hover {
+  border-color: var(--btn-highlight, skyblue);
+}
+#deal-btn:focus-visible {
+  border-color: var(--btn-highlight, skyblue);
+  outline: solid var(--btn-highlight, skyblue);
+}
+#deal-btn:active {
+  color: var(--btn-highlight, skyblue);
+  box-shadow: none;
+}
+
+
+/*    +----------------+
+ *    |  SCREEN SIZES  |
+ *    +----------------+
+*/
+
+/* adding in styles for growing screens */
+@media screen and (min-width: 420px) {
+  body {
+    margin: 2rem 1rem;
+  }
+  h1 {
+    margin: 0;
+    padding: 0.25em 0;
+    width: 100%;
+  }
+  #deal-btn {
+    margin: 1em 0;
+  }
+}
+
+@media screen and (max-width: 649px) {
+  #deal-btn {
+    position: sticky;
+    top: 1em;
+
+  }
+}
+
+/* medium/large screen styles */
+@media screen and (min-width: 650px) {
+  h1 {
+    margin: 0 auto;
+    padding: 0.25em 1.5em;
+    width: max-content;
+  }
+  #playing-cards {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    max-width: 80%;
+  }
+  #deal-btn {
+    margin: 1em;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+  }
+}
+
