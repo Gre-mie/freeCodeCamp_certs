@@ -1,0 +1,62 @@
+/* Boilerplate CSS file */
+
+:root {
+  color-scheme: /* TODO: add relevent colour schemes, default first in list*/ 
+  /* TODO: add website colours (all colours should be variables, no hard coding) */
+}
+
+/*    +-----------------+
+ *    |  NORMILISATION  |
+ *    +-----------------+
+*/
+
+
+ 
+html {
+  box-sizing: border-box;
+}
+html * {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  max-width: 210mm;   /* INFO: Width of an A4 page */
+  min-height: 100vh;
+}
+
+button {
+  font-size: inherit;
+}
+
+
+/*    +---------------+
+ *    |  MAIN STYLES  |
+ *    +---------------+
+*/
+
+/* TODO: Get the styles working, nothing fancy, keep it simple even if ugly
+ *
+ * NOTE: Do NOT!!! add a bunch of other complex classes 
+*/
+
+
+/*    +----------------+
+ *    |  SCREEN SIZES  |
+ *    +----------------+
+*/
+
+
+/*    +----------------+
+ *    |  COLOR SCHEME  |
+ *    +----------------+
+*/
+
+/* INFO: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/color-scheme
+@media only screen and (prefers-color-scheme: ) {  TODO: detect non default scheme and change colours accordingly 
+  :root {
+     TODO: set new colours to be used 
+  }
+}
+*/
+
