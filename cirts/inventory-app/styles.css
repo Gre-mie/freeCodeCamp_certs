@@ -1,34 +1,51 @@
-/* Boilerplate CSS file */
-
 :root {
-  color-scheme: /* TODO: add relevent colour schemes, default first in list*/ 
-  /* TODO: add website colours (all colours should be variables, no hard coding) */
+  --main-bg-color: white;
+  --main-text-color: black;
+  --main-border-color: #00001a;
+
+  --row-base-color: var(--main-bg-color);
+  --row-toread-color: #99ff99;
+  --row-inprogress-color: #ffff99;
+  --row-read-color: skyblue;
+
+  --status-border-color: #00001a;
+  --status-toread-bg-color: #99ff99;
+  --status-inprogress-bg-color: #ffff99;
+  --status-read-bg-color: skyblue;
+
+  --rate-empty-color: var(--row-base-color);
+  --rate-full-color: yellow;
+  --rate-border-color: #00001a;
 }
 
 /*    +-----------------+
  *    |  NORMILISATION  |
  *    +-----------------+
 */
-
-
  
 html {
   box-sizing: border-box;
 }
 html * {
   box-sizing: inherit;
+  margin: 0;
 }
 
 body {
+  display: flex;
+  gap: 1em;
+  flex-flow: column wrap;
   margin: 0;
-  max-width: 210mm;   /* INFO: Width of an A4 page */
+  padding: 1em;
+  width: 100%;
   min-height: 100vh;
+  font-family: sans-serif;
+  color: var(--main-text-color);
+  background: var(--main-bg-color);
 }
-
-button {
-  font-size: inherit;
+span {
+  display: inline-block;
 }
-
 
 /*    +---------------+
  *    |  MAIN STYLES  |
@@ -40,23 +57,99 @@ button {
  * NOTE: Do NOT!!! add a bunch of other complex classes 
 */
 
+h1 {
+  text-align: center;
+}
+table {
+  border-collapse: collapse;
+  border: 1px solid var(--main-border-color);
+}
+td, th {
+  padding: 0.3em 0.8em;
+}
+span[class="status"], span[class^="rate"] {
+  height: min-content;
+  width: max-content;
+  padding: 0.2em 0.5em;
+}
+span[class^="rate"] > span {
+  margin: 0.1em;
+  height: 1.5em;
+  width: 1.5em;
+  border: 1px solid var(--rate-border-color);
+  border-radius: 50%;
+  background-color: var(--rate-empty-color);
+}
 
-/*    +----------------+
- *    |  SCREEN SIZES  |
- *    +----------------+
-*/
+tr[class="to-read"] {
+  background-image: linear-gradient(
+    var(--row-toread-color) 0% 5%,
+    var(--row-base-color) 20% 80%,
+    var(--row-toread-color) 95% 100%
+  );
+}
+tr[class="in-progress"] {
+  background-image: linear-gradient(
+    var(--row-inprogress-color) 0% 5%,
+    var(--row-base-color) 20% 80%,
+    var(--row-inprogress-color) 95% 100%
+  );
+}
+tr[class="read"] {
+  background-image: linear-gradient(
+    var(--row-read-color) 0% 5%,
+    var(--row-base-color) 20% 80%,
+    var(--row-read-color) 95% 100%
+  );
+}
 
+td:has([class="status"]), td:has([class^="rate"]) {
+  text-align: center;
+}
+tr[class="to-read"] span[class="status"] {
+  background-image: radial-gradient(
+    var(--row-base-color),
+    var(--status-toread-bg-color)
+  );
+  border: 1px solid var(--status-border-color);
+  border-radius: 0.2em;
+}
+tr[class="in-progress"] span[class="status"] {
+  background-image: radial-gradient(
+    var(--row-base-color),
+    var(--status-inprogress-bg-color)
+  );
+  border: 1px solid var(--status-border-color);
+  border-radius: 0.2em;
+}
+tr[class="read"] span[class="status"] {
+  background-image: radial-gradient(
+    var(--row-base-color),
+    var(--status-read-bg-color)
+  );
+  border: 1px solid var(--status-border-color);
+  border-radius: 0.2em;
+}
 
-/*    +----------------+
- *    |  COLOR SCHEME  |
- *    +----------------+
-*/
+span[class~="one"] > span:first-child {
+  background-image: linear-gradient(
+    var(--rate-full-color)
+  );
+}
 
-/* INFO: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/color-scheme
-@media only screen and (prefers-color-scheme: ) {  TODO: detect non default scheme and change colours accordingly 
-  :root {
-     TODO: set new colours to be used 
-  }
+span[class~="two"] > span:first-child,
+span[class~="two"] > span:nth-child(2) {
+  background-image: linear-gradient(
+    var(--rate-full-color)
+  );
+}
+/*
+span[class~="three"] > span:first-child,
+span[class~="three"] > span:nth-child(2),
+span[class~="three"] > span:nth-child(3) {
+  background-image: linear-gradient(
+    var(--rate-full-color)
+  );
 }
 */
 
