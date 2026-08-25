@@ -21,15 +21,9 @@
   </head>
 
   <body>
-
-    <!-- TODO: Complete minimum HTML structure -->
-    <!-- NOTE: Do NOT!!! add to the tables, keep it simple, no adding dates or extra columns -->
-
-    <!-- TODO: When all tests are passing, work on the form for adding new rows, keep it short and simple, multiple choice mostly -->
-
     <!-- NOTE: Tests are to restricting, 
           they dont allow additional columns or extra areas to add 
-          buttons for updating Status or Rating area 
+          buttons for updating Status or rating area 
     -->
 
     <h1>Book Inventory</h1>
@@ -98,7 +92,50 @@
       </tbody>
     </table>
 
-    <!-- TODO: add form to collect, title(text), author(text) and category(select, options: education, entertainment, autobiography, other) -->
+    <form action="" method=""> <!-- TODO: update action and method to work with JS -->
+      <h2>Add a Book</h2>
+      <div>
+        <label for="form-book-title">Title</label>
+        <input 
+          id="form-book-title"
+          name="book-title"
+          type="text"
+          minlength="3"
+          maxlength="50"
+          size="20"
+          required
+        >
+      </div>
+      <div>
+        <label for="form-book-author">Author</label>
+        <input
+          id="form-book-author"
+          name="book-author"
+          type="text"
+          minlength="3"
+          max-length="100"
+          size="20"
+          required
+        >
+      </div>
+
+      <div>
+        <label for="form-book-category">Category</label>
+        <select 
+          id="form-book-category"
+          name="book-category"
+          required
+        >
+          <option value="">--choose a category--</option>
+          <hr/>
+          <option value="autobiography">autobiography</option>
+          <option value="education">Education</option>
+          <option value="entertainment">Entertainment</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <input id="form-submit-book" type="submit" value="Add Book">
+    </form>
 
   </body>
 </html>

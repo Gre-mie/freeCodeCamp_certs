@@ -1,9 +1,10 @@
 :root {
-  --main-bg-color: white;
+  --main-bg-color: #e1e5f4;
+  --area-bg-color: white;
   --main-text-color: black;
   --main-border-color: #00001a;
 
-  --row-base-color: var(--main-bg-color);
+  --row-base-color: var(--area-bg-color);
   --row-toread-color: #99ff99;
   --row-inprogress-color: #ffff99;
   --row-read-color: skyblue;
@@ -16,6 +17,12 @@
   --rate-empty-color: var(--row-base-color);
   --rate-full-color: yellow;
   --rate-border-color: #00001a;
+
+  --button-bg-color: skyblue;
+  --button-text-color: var(--main-text-color);
+  --button-border-color: skyblue;
+  --button-bg-color-hover: #99ff99;
+  --button-border-color-active: #99ff99;
 }
 
 /*    +-----------------+
@@ -46,15 +53,23 @@ body {
 span {
   display: inline-block;
 }
+form {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  margin: 2rem auto;
+  padding: 1em 2em;
+  background: var(--area-bg-color);
+  border: 1px solid var(--main-border-color);
+}
+h2 {
+  text-align: center;
+  margin-bottom: 0.8em;
+}
 
 /*    +---------------+
  *    |  MAIN STYLES  |
  *    +---------------+
-*/
-
-/* TODO: Get the styles working, nothing fancy, keep it simple even if ugly
- *
- * NOTE: Do NOT!!! add a bunch of other complex classes 
 */
 
 h1 {
@@ -62,6 +77,7 @@ h1 {
 }
 table {
   border-collapse: collapse;
+  background: var(--row-base-color);
   border: 1px solid var(--main-border-color);
 }
 td, th {
@@ -152,4 +168,37 @@ span[class~="three"] > span:nth-child(3) {
   );
 }
 */
+
+form > div {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-bottom: 0.4em;
+  min-width: 250px;
+  width: 100%;
+}
+#form-submit-book {
+  margin: 1em 1em 0.4em 1em;
+  padding: 0.3em 1em;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--button-text-color);
+  background-image: radial-gradient(
+    var(--area-bg-color),
+    var(--button-bg-color)
+  );
+  border: 3px solid var(--button-border-color);
+  border-radius: 0.5em;
+}
+#form-submit-book:hover {
+  background-image: radial-gradient(
+    var(--area-bg-color),
+    var(--button-bg-color-hover)
+  );
+}
+#form-submit-book:active {
+  border-color: var(--button-border-color-active);
+}
+
+/* TODO: Add red starts to invalid feilds */
 
